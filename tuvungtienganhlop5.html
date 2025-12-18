@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dropdownmenu.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+        <title>Từ vựng Tiếng Anh Lớp 5</title>
+        <style>
+            .Logo{
+                color: rgb(255, 255, 255);
+                font-size: xx-large;
+                font-weight: 700;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding-left: 20px;
+                padding-right: 30px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                background-color: rgb(114, 149, 77);
+                width: 300px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            
+            .TV5{
+                color:rgb(41, 53, 28);
+                text-align-last: center;
+                font-size: xx-large;
+                font-weight: 700;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                padding-top: 50px;
+                padding-bottom: 15px;                
+            }
+
+            .dangbaitap{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                color: rgb(42, 42, 42);
+                align-items: center;
+                text-align: center;
+                font-size: large;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+            
+                .box1{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box2{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box3{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box4{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+
+                /* GRID LAYOUT */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 300px);
+            grid-auto-rows: auto;
+            gap: 2px 50px;
+            justify-content: center;
+            margin: 40px auto;
+            padding: 20px;
+        }
+            
+        /* IMAGE WRAPPER */
+        .image-box {
+            width: 300px;
+            height: 150px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* BUTTONS */
+        .sound-btn {
+            background-color: rgba(51, 133, 51, 0.8);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            width: 200px;
+            padding: 8px 0;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            transition: transform 0.2s ease;
+            justify-self: center;
+        }
+
+        .sound-btn:hover {
+            transform: scale(1.1);
+        }
+
+        </style>
+    </head>
+    <body>
+        <!-- Phần đầu trang -->
+        <div style="
+            display: grid;
+            grid-template-columns: 310px 1fr;">
+            <div class="Logo">Ms.Nhung English</div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li class="nav-link">
+                        <a href="#">Trang chủ</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Các khóa học</a>
+                    </li>
+
+                    <li class="nav-link services">
+                        <a href="#">Từ Vựng
+                            <span class="material-icons dropdown-icon">
+                                arrow_drop_down
+                            </span>
+                        </a>
+                        <ul class="drop-down">
+                            <li> <a href="tuvungtienganhlop2.html" target="_self">Lớp 2</a></li>
+                            <li> <a href="tuvungtienganhlop3.html" target="_self">Lớp 3</a></li>
+                            <li> <a href="tuvungtienganhlop4.html" target="_self">Lớp 4</a></li>
+                            <li> <a href="tuvungtienganhlop5.html" target="_self">Lớp 5</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Luyện Nghe</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Luyện Đọc</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Ngữ Pháp</a>
+                    </li>
+
+                </ul>    
+            </nav>
+        </div>
+
+        <div style="
+            display: grid;
+            grid-template-rows: 2fr 1fr;">  
+            <div class="TV5">TIẾNG ANH LỚP 5</div>
+            <div class="dangbaitap">
+                <div class="box1"><a href="tuvungtienganhlop5.html" target="_self">&#128210 Bộ từ vựng</a></div>
+                <div class="box2">&#129513 Trắc nghiệm</div>
+                <div class="box3"><a href="nghegotvl5.html" target="_self">&#127911 Nghe chính tả</a></div>
+                <div class="box4">&#128221 Ngữ pháp</div>
+            </div>
+        </div>
+        
+            <!-- VOCAB GRID -->
+            <div class="vocab-grid">
+
+                <!-- AUTO-GENERATED 80 ITEMS: image-box + button + audio -->
+                <!-- Format: image Flashcards/IM01.png ... IM80.png -->
+
+                <!-- Items 01 - 80 -->
+
+                <!-- 1 -->
+                <div class="image-box"><img src="FlashcardsG5/01Max.PNG" alt="Max"></div>
+                <div class="image-box"><img src="FlashcardsG5/02Holly.PNG" alt="Holly"></div>
+                <div class="image-box"><img src="FlashcardsG5/03Amy.PNG" alt="Amy"></div>
+                <div class="image-box"><img src="FlashcardsG5/04Leo.PNG" alt="Leo"></div>
+
+                <!-- 2 -->
+                <button class="sound-btn">Max</button>
+
+                <button class="sound-btn">Holly</button>
+                
+                <button class="sound-btn">Amy</button>
+
+                <button class="sound-btn">Leo</button>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 3 -->
+                <div class="image-box"><img src="FlashcardsG5/05takeashower.PNG" alt="take a shower"></div>
+                <div class="image-box"><img src="FlashcardsG5/06brushmyteeth.PNG" alt="brush my teeth"></div>
+                <div class="image-box"><img src="FlashcardsG5/07getdressed.PNG" alt="get dressed"></div>
+                <div class="image-box"><img src="FlashcardsG5/08catchthebus.PNG" alt="catch the bus"></div>
+
+                <!-- 4 -->
+                <button class="sound-btn" onclick="playSound('takeashower')">take a shower</button>
+                <audio id="takeashower" src="Auff5/05takeashower.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('brushmyteeth')">brush my teeth</button>
+                <audio id="brushmyteeth" src="Auff5/06brushmyteeth.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('getdressed')">get dressed</button>
+                <audio id="getdressed" src="Auff5/07getdressed.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('catchthebus')">catch the bus</button>
+                <audio id="catchthebus" src="Auff5/08catchthebus.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 5 -->
+                <div class="image-box"><img src="FlashcardsG5/09walktoschool.PNG" alt="walk to school"></div>
+                <div class="image-box"><img src="FlashcardsG5/10haveasnack.PNG" alt="haveasnack"></div>
+                <div class="image-box"><img src="FlashcardsG5/11domyhomework.PNG" alt="do my homework"></div>
+                <div class="image-box"><img src="FlashcardsG5/12ridemybike.PNG" alt="ride my bike"></div>
+
+                <!-- 6 -->
+                <button class="sound-btn" onclick="playSound('walktoschool')">walk to school</button>
+                <audio id="walktoschool" src="Auff5/09walktoschool.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('haveasnack')">have a snack</button>
+                <audio id="haveasnack" src="Auff5/10haveasnack.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('domyhomework')">do my homework</button>
+                <audio id="domyhomework" src="Auff5/11domyhomework.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('ridemybike')">ride my bike</button>
+                <audio id="ridemybike" src="Auff5/12ridemybike.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 7 -->
+                <div class="image-box"><img src="FlashcardsG5/13Cafe.PNG" alt="café"></div>
+                <div class="image-box"><img src="FlashcardsG5/14sportscenter.PNG" alt="sports center"></div>
+                <div class="image-box"><img src="FlashcardsG5/15market.PNG" alt="market"></div>
+                <div class="image-box"><img src="FlashcardsG5/16playground.PNG" alt="playground"></div>
+                
+
+                <!-- 8 -->
+                <button class="sound-btn" onclick="playSound('cafe')">café</button>
+                <audio id="cafe" src="Auff5/13cafe.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('sportscenter')">sports center</button>
+                <audio id="sportscenter" src="Auff5/14sportscenter.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('market')">market</button>
+                <audio id="market" src="Auff5/15market.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('playground')">playground</button>
+                <audio id="playground" src="Auff5/16playground.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 9 -->
+                <div class="image-box"><img src="FlashcardsG5/17shoppingmall.PNG" alt="shopping mall"></div>
+                <div class="image-box"><img src="FlashcardsG5/18swimmingpool.PNG" alt="swimming pool"></div>
+                <div class="image-box"><img src="FlashcardsG5/19movietheater.PNG" alt="movie theater"></div>
+                <div class="image-box"><img src="FlashcardsG5/20skatepark.PNG" alt="skatepark"></div>
+                
+                <!-- 10 -->
+                <button class="sound-btn" onclick="playSound('shoppingmall')">shopping mall</button>
+                <audio id="shoppingmall" src="Auff5/17shoppingmall.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('swimmingpool')">swimming pool</button>
+                <audio id="swimmingpool" src="Auff5/18swimmingpool.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('movietheater')">movie theater</button>
+                <audio id="movietheater" src="Auff5/19movietheater.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('skatepark')">skatepark</button>
+                <audio id="skatepark" src="Auff5/20skatepark.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 11 -->
+                <div class="image-box"><img src="FlashcardsG5/21concert.PNG" alt="concert"></div>
+                <div class="image-box"><img src="FlashcardsG5/22actor.PNG" alt="actor"></div>
+                <div class="image-box"><img src="FlashcardsG5/23movie.PNG" alt="movie"></div>
+                <div class="image-box"><img src="FlashcardsG5/24character.PNG" alt="character"></div>
+
+                <!-- 12 -->
+                <button class="sound-btn" onclick="playSound('concert')">concert</button>
+                <audio id="concert" src="Auff5/21concert.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('actor')">actor</button>
+                <audio id="actor" src="Auff5/22actor.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('movie')">movie</button>
+                <audio id="movie" src="Auff5/23movie.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('character')">character</button>
+                <audio id="character" src="Auff5/24character.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 13 -->
+                <div class="image-box"><img src="FlashcardsG5/25lemonade.PNG" alt="lemonade"></div>
+                <div class="image-box"><img src="FlashcardsG5/26mushrooms.PNG" alt="mushrooms"></div>
+                <div class="image-box"><img src="FlashcardsG5/27meat.PNG" alt="meat"></div>
+                <div class="image-box"><img src="FlashcardsG5/28melon.PNG" alt="melon"></div>
+
+                <!-- 14 -->
+                <button class="sound-btn" onclick="playSound('lemonade')">lemonade</button>
+                <audio id="lemonade" src="Auff5/25lemonade.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('mushrooms')">mushrooms</button>
+                <audio id="mushrooms" src="Auff5/26mushrooms.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('meat')">meat</button>
+                <audio id="meat" src="Auff5/27meat.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('melon')">melon</button>
+                <audio id="melon" src="Auff5/28melon.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 15 -->
+                <div class="image-box"><img src="FlashcardsG5/29cucumber.PNG" alt="cucumber"></div>
+                <div class="image-box"><img src="FlashcardsG5/30onion.PNG" alt="onion"></div>
+                <div class="image-box"><img src="FlashcardsG5/31soda.PNG" alt="soda"></div>
+                <div class="image-box"><img src="FlashcardsG5/32icetea.PNG" alt="ice tea"></div>
+
+                <!-- 16 -->
+                <button class="sound-btn" onclick="playSound('cucumber')">cucumber</button>
+                <audio id="cucumber" src="Auff5/29cucumber.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('onion')">onion</button>
+                <audio id="onion" src="Auff5/30onion.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('soda')">soda</button>
+                <audio id="soda" src="Auff5/31soda.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('icetea')">ice tea</button>
+                <audio id="icetea" src="Auff5/32icetea.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 17 -->
+                <div class="image-box"><img src="FlashcardsG5/33fishsauce.PNG" alt="fish sauce"></div>
+                <div class="image-box"><img src="FlashcardsG5/34ricepaper.PNG" alt="rice paper"></div>
+                <div class="image-box"><img src="FlashcardsG5/35garlic.PNG" alt="garlic"></div>
+                <div class="image-box"><img src="FlashcardsG5/36beansprouts.PNG" alt="bean sprouts"></div>
+
+                <!-- 18 -->
+                <button class="sound-btn" onclick="playSound('fishsauce')">fish sauce</button>
+                <audio id="fishsauce" src="Auff5/33fishsauce.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('ricepaper')">rice paper</button>
+                <audio id="ricepaper" src="Auff5/34ricepaper.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('garlic')">garlic</button>
+                <audio id="garlic" src="Auff5/35garlic.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('beansprouts')">bean sprouts</button>
+                <audio id="beansprouts" src="Auff5/36beansprouts.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 19 -->
+                <div class="image-box"><img src="FlashcardsG5/37fruit.PNG" alt="fruit"></div>
+                <div class="image-box"><img src="FlashcardsG5/38vegetables.PNG" alt="vegetables"></div>
+                <div class="image-box"><img src="FlashcardsG5/39grains.PNG" alt="grains"></div>
+                <div class="image-box"><img src="FlashcardsG5/40cheese.PNG" alt="cheese"></div>
+
+                <!-- 20 -->
+                <button class="sound-btn" onclick="playSound('fruit')">fruit</button>
+                <audio id="fruit" src="Auff5/37fruit.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('vegetables')">vegetables</button>
+                <audio id="vegetables" src="Auff5/38vegetables.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('grains')">grains</button>
+                <audio id="grains" src="Auff5/39grains.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('cheese')">cheese</button>
+                <audio id="cheese" src="Auff5/40cheese.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 21 -->
+                <div class="image-box"><img src="FlashcardsG5/41dairy.PNG" alt="dairy"></div>
+                <div class="image-box"><img src="FlashcardsG5/42bus.PNG" alt="bus"></div>
+                <div class="image-box"><img src="FlashcardsG5/43electricbike.PNG" alt="electric bike"></div>
+                <div class="image-box"><img src="FlashcardsG5/44motorcycle.PNG" alt="motorcycle"></div>             
+                          
+                <!-- 22 -->
+                <button class="sound-btn" onclick="playSound('dairy')">dairy</button>
+                <audio id="dairy" src="Auff5/41dairy.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('bus')">bus</button>
+                <audio id="bus" src="Auff5/42bus.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('lectricbike')">electric bike</button>
+                <audio id="lectricbike" src="Auff5/43electricbike.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('motorcycle')">motorcycle</button>
+                <audio id="motorcycle" src="Auff5/44motorcycle.mp3"></audio>
+                
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 23 -->
+                <div class="image-box"><img src="FlashcardsG5/45plane.PNG" alt="plane"></div>
+                <div class="image-box"><img src="FlashcardsG5/46taxi.PNG" alt="taxi"></div>
+                <div class="image-box"><img src="FlashcardsG5/47train.PNG" alt="train"></div>
+                <div class="image-box"><img src="FlashcardsG5/48trolley.PNG" alt="trolley"></div>
+
+                <!-- 24 -->
+                <button class="sound-btn" onclick="playSound('plane')">plane</button>
+                <audio id="plane" src="Auff5/45plane.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('taxi')">taxi</button>
+                <audio id="taxi" src="Auff5/46taxi.mp3"></audio>              
+                
+                <button class="sound-btn" onclick="playSound('train')">train</button>
+                <audio id="train" src="Auff5/47train.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('trolley')">trolley</button>
+                <audio id="trolley" src="Auff5/48trolley.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 25 -->
+                <div class="image-box"><img src="FlashcardsG5/49scooter.PNG" alt="scooter"></div>
+                <div class="image-box"><img src="FlashcardsG5/50onfoot.PNG" alt="on foot"></div>
+                <div class="image-box"><img src="FlashcardsG5/51bybike.PNG" alt="by bike"></div>
+                <div class="image-box"><img src="FlashcardsG5/52inthemiddle.PNG" alt="in the middle"></div>             
+                
+                <!-- 26 -->
+                <button class="sound-btn" onclick="playSound('scooter')">scooter</button>
+                <audio id="scooter" src="Auff5/49scooter.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('onfoot')">on foot</button>
+                <audio id="onfoot" src="Auff5/50onfoot.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('bybike')">by bike</button>
+                <audio id="bybike" src="Auff5/51bybike.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('inthemiddle')">in the middle</button>
+                <audio id="inthemiddle" src="Auff5/52inthemiddle.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 27 -->
+                <div class="image-box"><img src="FlashcardsG5/53inside.PNG" alt="inside"></div>
+                <div class="image-box"><img src="FlashcardsG5/54australia.PNG" alt="Australia"></div>
+                <div class="image-box"><img src="FlashcardsG5/55vietnam.PNG" alt="Viet Nam"></div>
+                <div class="image-box"><img src="FlashcardsG5/56theusa.PNG" alt="the U.S.A"></div>             
+                               
+                <!-- 28 -->
+                <button class="sound-btn" onclick="playSound('inside')">inside</button>
+                <audio id="inside" src="Auff5/53inside.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('australia')">Australia</button>
+                <audio id="australia" src="Auff5/54australia.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('vietnam')">Viet Nam</button>
+                <audio id="vietnam" src="Auff5/55vietnam.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('theusa')">the U.S.A</button>
+                <audio id="theusa" src="Auff5/56theusa.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                
+                <!-- 29 -->
+                <div class="image-box"><img src="FlashcardsG5/57thailand.PNG" alt="Thailand"></div>
+                <div class="image-box"><img src="FlashcardsG5/58cambodia.PNG" alt="Cambodia"></div>
+                <div class="image-box"><img src="FlashcardsG5/59singapore.PNG" alt="Singapore"></div>
+                <div class="image-box"><img src="FlashcardsG5/60france.PNG" alt="France"></div>
+                             
+                <!-- 30 -->
+                <button class="sound-btn" onclick="playSound('thailand')">Thailand</button>
+                <audio id="thailand" src="Auff5/57thailand.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('cambodia')">Cambodia</button>
+                <audio id="cambodia" src="Auff5/58cambodia.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('singapore')">Singapore</button>
+                <audio id="singapore" src="Auff5/59singapore.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('france')">France</button>
+                <audio id="france" src="Auff5/60france.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 31 -->
+                <div class="image-box"><img src="FlashcardsG5/61germany.PNG" alt="Germany"></div>
+                <div class="image-box"><img src="FlashcardsG5/62humid.PNG" alt="humid"></div>
+                <div class="image-box"><img src="FlashcardsG5/63stormy.PNG" alt="stormy"></div>
+                <div class="image-box"><img src="FlashcardsG5/64cloudy.PNG" alt="cloudy"></div>                
+
+                <!-- 32 -->
+                <button class="sound-btn" onclick="playSound('germany')">Germany</button>
+                <audio id="germany" src="Auff5/61germany.mp3"></audio>                
+                
+                <button class="sound-btn" onclick="playSound('humid')">humid</button>
+                <audio id="humid" src="Auff5/62humid.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('stormy')">stormy</button>
+                <audio id="stormy" src="Auff5/63stormy.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('cloudy')">cloudy</button>
+                <audio id="cloudy" src="Auff5/64cloudy.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 33 -->
+                <div class="image-box"><img src="FlashcardsG5/65foggy.PNG" alt="foggy"></div>
+                <div class="image-box"><img src="FlashcardsG5/66start.PNG" alt="start"></div>
+                <div class="image-box"><img src="FlashcardsG5/67finish.PNG" alt="finish"></div>
+                <div class="image-box"><img src="FlashcardsG5/68love.PNG" alt="love"></div>
+                              
+                <!-- 34 -->
+                <button class="sound-btn" onclick="playSound('foggy')">foggy</button>
+                <audio id="foggy" src="Auff5/65foggy.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('start')">start</button>
+                <audio id="start" src="Auff5/66start.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('finish')">finish</button>
+                <audio id="finish" src="Auff5/67finish.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('love')">love</button>
+                <audio id="love" src="Auff5/68love.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 35 -->
+                <div class="image-box"><img src="FlashcardsG5/69hate.PNG" alt="hate"></div>
+                <div class="image-box"><img src="FlashcardsG5/70want.PNG" alt="want"></div>
+                <div class="image-box"><img src="FlashcardsG5/71use.PNG" alt="use"></div>
+                <div class="image-box"><img src="FlashcardsG5/72live.PNG" alt="live"></div>
+                
+                <!-- 36 -->
+                <button class="sound-btn" onclick="playSound('hate')">hate</button>
+                <audio id="hate" src="Auff5/69hate.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('want')">want</button>
+                <audio id="want" src="Auff5/70want.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('use')">use</button>
+                <audio id="use" src="Auff5/71use.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('live')">live</button>
+                <audio id="live" src="Auff5/72live.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 37 -->
+                <div class="image-box"><img src="FlashcardsG5/73cook.PNG" alt="cook"></div>
+                <div class="image-box"><img src="FlashcardsG5/74receive.PNG" alt="receive"></div>
+                <div class="image-box"><img src="FlashcardsG5/75luckymoney.PNG" alt="lucky money"></div>
+                <div class="image-box"><img src="FlashcardsG5/76fireworks.PNG" alt="fireworks"></div>
+                
+                <!-- 38 -->
+                <button class="sound-btn" onclick="playSound('cook')">cook</button>
+                <audio id="cook" src="Auff5/73cook.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('receive')">receive</button>
+                <audio id="receive" src="Auff5/74receive.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('luckymoney')">lucky money</button>
+                <audio id="luckymoney" src="Auff5/75luckymoney.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('fireworks')">fireworks</button>
+                <audio id="fireworks" src="Auff5/76fireworks.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 39 -->
+                <div class="image-box"><img src="FlashcardsG5/77enjoy.PNG" alt="enjoy"></div>
+                <div class="image-box"><img src="FlashcardsG5/78camel.PNG" alt="camel"></div>
+                <div class="image-box"><img src="FlashcardsG5/79sanddune.PNG" alt="sand dune"></div>
+                <div class="image-box"><img src="FlashcardsG5/80stem.PNG" alt="stem"></div>
+                
+                <!-- 40 -->
+                <button class="sound-btn" onclick="playSound('enjoy')">enjoy</button>
+                <audio id="enjoy" src="Auff5/77enjoy.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('camel')">camel</button>
+                <audio id="camel" src="Auff5/78camel.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('sanddune')">sand dune</button>
+                <audio id="sanddune" src="Auff5/79sanddune.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('stem')">stem</button>
+                <audio id="stem" src="Auff5/80stem.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 41 -->
+                <div class="image-box"><img src="FlashcardsG5/81plant.PNG" alt="plant"></div>
+                <div class="image-box"><img src="FlashcardsG5/82rock.PNG" alt="rock"></div>
+                <div class="image-box"><img src="FlashcardsG5/83dinosaur.PNG" alt="dinosaur"></div>
+                <div class="image-box"><img src="FlashcardsG5/84bones.PNG" alt="bones"></div>
+                
+                <!-- 42 -->
+                <button class="sound-btn" onclick="playSound('plant')">plant</button>
+                <audio id="plant" src="Auff5/81plant.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('rock')">rock</button>
+                <audio id="rock" src="Auff5/82rock.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('dinosaur')">dinosaur</button>
+                <audio id="dinosaur" src="Auff5/83dinosaur.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('bones')">bones</button>
+                <audio id="bones" src="Auff5/84bones.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 43 -->
+                <div class="image-box"><img src="FlashcardsG5/85model.PNG" alt="model"></div>
+                <div class="image-box"><img src="FlashcardsG5/86scary.PNG" alt="scary"></div>
+                <div class="image-box"><img src="FlashcardsG5/87scream.PNG" alt="scream"></div>
+                <div class="image-box"><img src="FlashcardsG5/88roar.PNG" alt="roar"></div>
+                
+                <!-- 44 -->
+                <button class="sound-btn" onclick="playSound('model')">model</button>
+                <audio id="model" src="Auff5/85model.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('scary')">scary</button>
+                <audio id="scary" src="Auff5/86scary.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('scream')">scream</button>
+                <audio id="scream" src="Auff5/87scream.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('roar')">roar</button>
+                <audio id="roar" src="Auff5/88roar.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 45 -->
+                <div class="image-box"><img src="FlashcardsG5/89alive.PNG" alt="a live"></div>
+                <div class="image-box"><img src="FlashcardsG5/90dead.PNG" alt="dead"></div>
+                <div class="image-box"><img src="FlashcardsG5/91scientist.PNG" alt="scientist"></div>
+                <div class="image-box"><img src="FlashcardsG5/92tourist.PNG" alt="tourist"></div>
+                
+                <!-- 46 -->
+                <button class="sound-btn" onclick="playSound('alive')">a live</button>
+                <audio id="alive" src="Auff5/89alive.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('dead')">dead</button>
+                <audio id="dead" src="Auff5/90dead.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('scientist')">scientist</button>
+                <audio id="scientist" src="Auff5/91scientist.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('tourist')">tourist</button>
+                <audio id="tourist" src="Auff5/92tourist.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                
+                <!-- 47 -->
+                <div class="image-box"><img src="FlashcardsG5/93jungle.PNG" alt="jungle"></div>
+                <div class="image-box"><img src="FlashcardsG5/94cave.PNG" alt="cave"></div>
+                <div class="image-box"><img src="FlashcardsG5/95river.PNG" alt="river"></div>
+                <div class="image-box"><img src="FlashcardsG5/96lake.PNG" alt="lake"></div>
+                
+                <!-- 48 -->
+                <button class="sound-btn" onclick="playSound('jungle')">jungle</button>
+                <audio id="jungle" src="Auff5/93jungle.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('cave')">cave</button>
+                <audio id="cave" src="Auff5/94cave.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('river')">river</button>
+                <audio id="river" src="Auff5/95river.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('lake')">lake</button>
+                <audio id="lake" src="Auff5/96lake.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 49 -->
+                <div class="image-box"><img src="FlashcardsG5/97mountain.PNG" alt="mountain"></div>
+                <div class="image-box"><img src="FlashcardsG5/98waterfall.PNG" alt="waterfall"></div>
+                <div class="image-box"><img src="FlashcardsG5/99ocean.PNG" alt="ocean"></div>
+                <div class="image-box"><img src="FlashcardsG5/100wide.PNG" alt="wide"></div>
+                
+                <!-- 50 -->
+                <button class="sound-btn" onclick="playSound('mountain')">mountain</button>
+                <audio id="mountain" src="Auff5/97mountain.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('waterfall')">waterfall</button>
+                <audio id="waterfall" src="Auff5/98waterfall.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('ocean')">ocean</button>
+                <audio id="ocean" src="Auff5/99ocean.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('wide')">wide</button>
+                <audio id="wide" src="Auff5/100wide.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 51 -->
+                <div class="image-box"><img src="FlashcardsG5/101deep.PNG" alt="deep"></div>
+                <div class="image-box"><img src="FlashcardsG5/102high.PNG" alt="high"></div>
+                <div class="image-box"><img src="FlashcardsG5/103island.PNG" alt="island"></div>
+                <div class="image-box"><img src="FlashcardsG5/104world.PNG" alt="world"></div>
+                
+                <!-- 52 -->
+                <button class="sound-btn" onclick="playSound('deep')">deep</button>
+                <audio id="deep" src="Auff5/101deep.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('high')">high</button>
+                <audio id="high" src="Auff5/102high.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('island')">island</button>
+                <audio id="island" src="Auff5/103island.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('world')">world</button>
+                <audio id="world" src="Auff5/104world.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 53 -->
+                <div class="image-box"><img src="FlashcardsG5/105dark.PNG" alt="dark"></div>
+                <div class="image-box"><img src="FlashcardsG5/106restaurant.PNG" alt="restaurant"></div>
+                <div class="image-box"><img src="FlashcardsG5/107floor.PNG" alt="floor"></div>
+                <div class="image-box"><img src="FlashcardsG5/108building.PNG" alt="building"></div>
+                
+                <!-- 54 -->
+                <button class="sound-btn" onclick="playSound('dark')">dark</button>
+                <audio id="dark" src="Auff5/105dark.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('restaurant')">restaurant</button>
+                <audio id="restaurant" src="Auff5/106restaurant.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('floor')">floor</button>
+                <audio id="floor" src="Auff5/107floor.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('building')">building</button>
+                <audio id="building" src="Auff5/108building.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 55 -->
+                <div class="image-box"><img src="FlashcardsG5/109path.PNG" alt="path"></div>
+                <div class="image-box"><img src="FlashcardsG5/110grass.PNG" alt="grass"></div>
+                <div class="image-box"><img src="FlashcardsG5/111flowers.PNG" alt="flowers"></div>
+                <div class="image-box"><img src="FlashcardsG5/112garbagecan.PNG" alt="garbage can"></div>
+                
+                <!-- 56 -->
+                <button class="sound-btn" onclick="playSound('path')">path</button>
+                <audio id="path" src="Auff5/109path.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('grass')">grass</button>
+                <audio id="grass" src="Auff5/110grass.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('flowers')">flowers</button>
+                <audio id="flowers" src="Auff5/111flowers.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('garbagecan')">garbage can</button>
+                <audio id="garbagecan" src="Auff5/112garbagecan.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 57 -->
+                <div class="image-box"><img src="FlashcardsG5/113trees.PNG" alt="trees"></div>
+                <div class="image-box"><img src="FlashcardsG5/114fountain.PNG" alt="fountain"></div>
+                <div class="image-box"><img src="FlashcardsG5/115litter.PNG" alt="litter"></div>
+                <div class="image-box"><img src="FlashcardsG5/116bushes.PNG" alt="bushes"></div>
+                
+                <!-- 58 -->
+                <button class="sound-btn" onclick="playSound('trees')">trees</button>
+                <audio id="trees" src="Auff5/113trees.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('fountain')">fountain</button>
+                <audio id="fountain" src="Auff5/114fountain.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('litter')">litter</button>
+                <audio id="litter" src="Auff5/115litter.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('bushes')">bushes</button>
+                <audio id="bushes" src="Auff5/116bushes.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 59 -->
+                <div class="image-box"><img src="FlashcardsG5/117shout.PNG" alt="shout"></div>
+                <div class="image-box"><img src="FlashcardsG5/118follow.PNG" alt="follow"></div>
+                <div class="image-box"><img src="FlashcardsG5/119chase.PNG" alt="chase"></div>
+                <div class="image-box"><img src="FlashcardsG5/120catch.PNG" alt="catch"></div>
+                
+                <!-- 60 -->
+                <button class="sound-btn" onclick="playSound('shout')">shout</button>
+                <audio id="shout" src="Auff5/117shout.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('follow')">follow</button>
+                <audio id="follow" src="Auff5/118follow.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('chase')">chase</button>
+                <audio id="chase" src="Auff5/119chase.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('catch')">catch</button>
+                <audio id="catch" src="Auff5/120catch.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 61 -->
+                <div class="image-box"><img src="FlashcardsG5/121cross.PNG" alt="cross"></div>
+                <div class="image-box"><img src="FlashcardsG5/122spring.PNG" alt="spring"></div>
+                <div class="image-box"><img src="FlashcardsG5/123summer.PNG" alt="summer"></div>
+                <div class="image-box"><img src="FlashcardsG5/124fall.PNG" alt="fall"></div>
+                
+                <!-- 62 -->
+                <button class="sound-btn" onclick="playSound('cross')">cross</button>
+                <audio id="cross" src="Auff5/121cross.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('spring')">spring</button>
+                <audio id="spring" src="Auff5/122spring.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('summer')">summer</button>
+                <audio id="summer" src="Auff5/123summer.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('fall')">fall</button>
+                <audio id="fall" src="Auff5/124fall.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 63 -->
+                <div class="image-box"><img src="FlashcardsG5/125winter.PNG" alt="winter"></div>
+                <div class="image-box"><img src="FlashcardsG5/126aheadache.PNG" alt="a headache"></div>
+                <div class="image-box"><img src="FlashcardsG5/127afever.PNG" alt="a fever"></div>
+                <div class="image-box"><img src="FlashcardsG5/128atoothache.PNG" alt="a toothache"></div>
+                
+                <!-- 64 -->
+                <button class="sound-btn" onclick="playSound('winter')">winter</button>
+                <audio id="winter" src="Auff5/125winter.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('aheadache')">a headache</button>
+                <audio id="aheadache" src="Auff5/126aheadache.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('afever')">a fever</button>
+                <audio id="afever" src="Auff5/127afever.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('atoothache')">a toothache</button>
+                <audio id="atoothache" src="Auff5/128atoothache.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 65 -->
+                <div class="image-box"><img src="FlashcardsG5/129acold.PNG" alt="a cold"></div>
+                <div class="image-box"><img src="FlashcardsG5/130acough.PNG" alt="a cough"></div>
+                <div class="image-box"><img src="FlashcardsG5/131anearache.PNG" alt="an earache"></div>
+                <div class="image-box"><img src="FlashcardsG5/132astomachache.PNG" alt="a stomachache"></div>
+                
+                <!-- 66 -->
+                <button class="sound-btn" onclick="playSound('acold')">a cold</button>
+                <audio id="acold" src="Auff5/129acold.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('cough')">a cough</button>
+                <audio id="cough" src="Auff5/130acough.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('anearache')">an earache</button>
+                <audio id="anearache" src="Auff5/131anearache.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('astomachache')">a stomachache</button>
+                <audio id="astomachache" src="Auff5/132astomachache.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 67 -->
+                <div class="image-box"><img src="FlashcardsG5/133asorethroat.PNG" alt="a sore throat"></div>
+                <div class="image-box"><img src="FlashcardsG5/134chips.PNG" alt="chips"></div>
+                <div class="image-box"><img src="FlashcardsG5/135sugar.PNG" alt="sugar"></div>
+                <div class="image-box"><img src="FlashcardsG5/136exercise.PNG" alt="exercise"></div>
+                
+                <!-- 68 -->
+                <button class="sound-btn" onclick="playSound('asorethroat')">a sore throat</button>
+                <audio id="asorethroat" src="Auff5/133asoarthroat.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('chips')">chips</button>
+                <audio id="chips" src="Auff5/134chips.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('sugar')">sugar</button>
+                <audio id="sugar" src="Auff5/135sugar.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('exercise')">exercise</button>
+                <audio id="exercise" src="Auff5/136exercise.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 69 -->
+                <div class="image-box"><img src="FlashcardsG5/137healthy.PNG" alt="healthy"></div>
+                <div class="image-box"><img src="FlashcardsG5/138strong.PNG" alt="strong"></div>
+                <div class="image-box"><img src="FlashcardsG5/139thefuture.PNG" alt="the future"></div>
+                <div class="image-box"><img src="FlashcardsG5/140travel.PNG" alt="travel"></div>
+                
+                <!-- 70 -->
+                <button class="sound-btn" onclick="playSound('healthy')">healthy</button>
+                <audio id="healthy" src="Auff5/137healthy.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('strong')">strong</button>
+                <audio id="strong" src="Auff5/138strong.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('thefuture')">the future</button>
+                <audio id="thefuture" src="Auff5/139thefuture.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('travel')">travel</button>
+                <audio id="travel" src="Auff5/140travel.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 71 -->
+                <div class="image-box"><img src="FlashcardsG5/141earth.PNG" alt="earth"></div>
+                <div class="image-box"><img src="FlashcardsG5/142moon.PNG" alt="moon"></div>
+                <div class="image-box"><img src="FlashcardsG5/143rocket.PNG" alt="rocket"></div>
+                <div class="image-box"><img src="FlashcardsG5/144astronaut.PNG" alt="astronaut"></div>
+                
+                <!-- 72 -->
+                <button class="sound-btn" onclick="playSound('earth')">earth</button>
+                <audio id="earth" src="Auff5/141earth.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('moon')">moon</button>
+                <audio id="moon" src="Auff5/142moon.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('rocket')">rocket</button>
+                <audio id="rocket" src="Auff5/143rocket.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('astronaut')">astronaut</button>
+                <audio id="astronaut" src="Auff5/144astronaut.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 73 -->
+                <div class="image-box"><img src="FlashcardsG5/145supersonicplane.PNG" alt="supersonic plane"></div>
+                <div class="image-box"><img src="FlashcardsG5/146spaceship.PNG" alt="spaceship"></div>
+                <div class="image-box"><img src="FlashcardsG5/147robot.PNG" alt="robot"></div>
+                <div class="image-box"><img src="FlashcardsG5/148traffic.PNG" alt="traffic"></div>
+                
+                <!-- 74 -->
+                <button class="sound-btn" onclick="playSound('supersonicplane')">supersonic plane</button>
+                <audio id="supersonicplane" src="Auff5/145supersonicplane.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('spaceship')">spaceship</button>
+                <audio id="spaceship" src="Auff5/146spaceship.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('robot')">robot</button>
+                <audio id="robot" src="Auff5/147robot.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('traffic')">traffic</button>
+                <audio id="traffic" src="Auff5/148traffic.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 75 -->
+                <div class="image-box"><img src="FlashcardsG5/149crowded.PNG" alt="crowded"></div>
+                <div class="image-box"><img src="FlashcardsG5/150road.PNG" alt="road"></div>
+                <div class="image-box"><img src="FlashcardsG5/151storm.PNG" alt="storm"></div>
+                <div class="image-box"><img src="FlashcardsG5/152videogame.PNG" alt="video game"></div>
+                
+                <!-- 76 -->
+                <button class="sound-btn" onclick="playSound('crowded')">crowded</button>
+                <audio id="crowded" src="Auff5/149crowded.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('road')">road</button>
+                <audio id="road" src="Auff5/150road.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('storm')">storm</button>
+                <audio id="storm" src="Auff5/151storm.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('videogame')">video game</button>
+                <audio id="videogame" src="Auff5/152videogame.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 77 -->
+                <div class="image-box"><img src="FlashcardsG5/153tablet.PNG" alt="tablet"></div>
+                <div class="image-box"><img src="FlashcardsG5/154singer.PNG" alt="singer"></div>
+                <div class="image-box"><img src="FlashcardsG5/155moviestar.PNG" alt="movie star"></div>
+                <div class="image-box"><img src="FlashcardsG5/156dvd.PNG" alt="DVD"></div>
+                
+                <!-- 78 -->
+                <button class="sound-btn" onclick="playSound('tablet')">tablet</button>
+                <audio id="tablet" src="Auff5/153tablet.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('singer')">singer</button>
+                <audio id="singer" src="Auff5/154singer.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('moviestar')">movie star</button>
+                <audio id="moviestar" src="Auff5/155moviestar.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('dvd')">DVD</button>
+                <audio id="dvd" src="Auff5/156dvd.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 79 -->
+                <div class="image-box"><img src="FlashcardsG5/157remotecontrol.PNG" alt="remote control"></div>
+                <div class="image-box"><img src="FlashcardsG5/158tvshow.PNG" alt="TV show"></div>
+                <div class="image-box"><img src="FlashcardsG5/159smartphone.PNG" alt="smart phone"></div>
+                <div class="image-box"><img src="FlashcardsG5/160stadium.PNG" alt="stadium"></div>
+                
+                <!-- 80 -->
+                <button class="sound-btn" onclick="playSound('remotecontrol')">remote control</button>
+                <audio id="remotecontrol" src="Auff5/157remotecontrol.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('tvshow')">TV show</button>
+                <audio id="tvshow" src="Auff5/158tvshow.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('smartphone')">smart phone</button>
+                <audio id="smartphone" src="Auff5/159smartphone.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('stadium')">stadium</button>
+                <audio id="stadium" src="Auff5/160stadium.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 81 -->
+                <div class="image-box"><img src="FlashcardsG5/161cartoon.PNG" alt="cartoon"></div>
+                <div class="image-box"><img src="FlashcardsG5/162team.PNG" alt="team"></div>
+                <div class="image-box"><img src="FlashcardsG5/163quizprogram.PNG" alt="quiz program"></div>
+                <div class="image-box"><img src="FlashcardsG5/164channel.PNG" alt="channel"></div>
+                
+                <!-- 82 -->
+                <button class="sound-btn" onclick="playSound('cartoon')">cartoon</button>
+                <audio id="cartoon" src="Auff5/161cartoon.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('team')">team</button>
+                <audio id="team" src="Auff5/162team.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('quizprogram')">quiz program</button>
+                <audio id="quizprogram" src="Auff5/163quizprogram.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('channel')">channel</button>
+                <audio id="channel" src="Auff5/164channel.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 83 -->
+                <div class="image-box"><img src="FlashcardsG5/165robotarm.PNG" alt="robot arm"></div>
+                <div class="image-box"><img src="FlashcardsG5/166operation.PNG" alt="operation"></div>
+                <div class="image-box"><img src="FlashcardsG5/167factory.PNG" alt="factory"></div>
+                <div class="image-box"><img src="FlashcardsG5/168human.PNG" alt="human"></div>
+                
+                <!-- 84 -->
+                <button class="sound-btn" onclick="playSound('robotarm')">robot arm</button>
+                <audio id="robotarm" src="Auff5/165robotarm.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('operation')">operation</button>
+                <audio id="operation" src="Auff5/166operation.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('factory')">factory</button>
+                <audio id="factory" src="Auff5/167factory.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('human')">human</button>
+                <audio id="human" src="Auff5/168human.mp3"></audio>
+
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+                <div style="height: 20px;"></div>
+
+                <!-- 85 -->
+                <div class="image-box"><img src="FlashcardsG5/169japan.PNG" alt="Japan"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <!-- 86 -->
+                <button class="sound-btn" onclick="playSound('japan')">Japan</button>
+                <audio id="japan" src="Auff5/169japan.mp3"></audio>
+                <div></div>
+                <div></div>
+                <div></div>
+
+            </div>
+            <div style="height:200px"></div>
+        
+    <!-- Phần chân trang -->
+    <div style="
+    display:grid;
+    grid-template-columns: 300px 350px 500px 250px;
+    background-color: rgb(176, 185, 176);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div>&#128241 Zalo: 0969 453 840 (Ms.Nhung)</div>
+        <div>&#128231 Email: thanhnhung846@gmail.com</div>
+        <div></div>
+        <div>Ho Chi Minh City, Viet Nam</div>
+    </div>
+
+    <!-- UNIQUE AUDIO FUNCTION -->
+    <script>
+        function playSound(id) {
+            const audio = document.getElementById(id);
+            if (audio) audio.play();
+        }
+    </script>
+    
+    </body>
+</html>
