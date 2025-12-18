@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dropdownmenu.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+        <title>Nghe chính tả Lớp 3</title>
+        <style>
+            .Logo{
+                color: rgb(255, 255, 255);
+                font-size: xx-large;
+                font-weight: 700;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding-left: 20px;
+                padding-right: 30px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                background-color: rgb(114, 149, 77);
+                width: 300px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            
+            .TV3{
+                color:rgb(41, 53, 28);
+                text-align-last: center;
+                font-size: xx-large;
+                font-weight: 700;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                padding-top: 50px;
+                padding-bottom: 15px;                
+            }
+
+            .dangbaitap{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                color: rgb(42, 42, 42);
+                align-items: center;
+                text-align: center;
+                font-size: large;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+            
+                .box1{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box2{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box3{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box4{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+
+            :root{--bg:white;--card:#fff;--accent:rgb(83, 113, 83);--success:#16a34a;--danger:#ef4444}
+            body{font-family:system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:var(--bg);color:#0f172a}
+            .wrap{max-width:1000px;padding:20px;margin-left: 100px; margin-right: 100px;}
+            .card{background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06);padding:30px}
+            h1{margin:0 0 8px;font-size:22px}
+            p.lead{margin:0 0 18px;color:#334155}
+            .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+            button{background:var(--accent);color:white;border:0;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+            button.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+            button.danger{background:var(--danger)}
+            button:active{transform:translateY(1px)}
+            .input-row{display:flex;gap:8px;align-items:center;margin:12px 0}
+            input[type="text"]{flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef8;font-size:16px}
+            .feedback{min-height:28px;margin-top:8px}
+            .small{font-size:13px;color:#475569}
+            .progress{display:flex;gap:8px;align-items:center;margin-top:12px}
+            .pill{background:#eef2ff;color:rgb(83, 113, 83);padding:6px 10px;border-radius:999px;font-weight:600}
+            .score{margin-left:auto;font-weight:700}
+            ul.word-list{display:none;gap:8px;flex-wrap:wrap;padding:0;margin:12px 0 0;list-style:none}
+            ul.word-list li{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:14px}
+            .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+            @media (max-width:520px){.wrap{margin:16px;padding:12px}}        
+            
+            .targetunit{background:rgb(83, 113, 83);color:white;align-self: center;padding:5px;cursor:pointer}
+            .units{background:white;color:rgb(83, 113, 83);border:1px solid rgb(83, 113, 83);align-self: center;padding:5px;cursor:pointer}
+
+            .targetunit:hover {transform: scale(1.1);}
+            .units:hover {transform: scale(1.1);}
+        </style>
+    </head>
+    <body>
+        <!-- Phần đầu trang -->
+        <div style="
+            display: grid;
+            grid-template-columns: 310px 1fr;">
+            <div class="Logo">Ms.Nhung English</div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li class="nav-link">
+                        <a href="#">Trang chủ</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Các khóa học</a>
+                    </li>
+
+                    <li class="nav-link services">
+                        <a href="#">Từ Vựng
+                            <span class="material-icons dropdown-icon">
+                                arrow_drop_down
+                            </span>
+                        </a>
+                        <ul class="drop-down">
+                            <li> <a href="tuvungtienganhlop2.html" target="_self">Lớp 2</a></li>
+                            <li> <a href="tuvungtienganhlop3.html" target="_self">Lớp 3</a></li>
+                            <li> <a href="tuvungtienganhlop4.html" target="_self">Lớp 4</a></li>
+                            <li> <a href="tuvungtienganhlop5.html" target="_self">Lớp 5</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Luyện Nghe</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Luyện Đọc</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Ngữ Pháp</a>
+                    </li>
+
+                </ul>    
+            </nav>
+        </div>
+
+        <div style="
+            display: grid;
+            grid-template-rows: 2fr 1fr;">  
+            <div class="TV3"><a href="tuvungtienganhlop4.html"target="_self">TIẾNG ANH LỚP 3</a></div>
+            <div class="dangbaitap">
+                <div class="box1"><a href="tuvungtienganhlop3.html" target="_self">&#128210 Bộ từ vựng</a></div>
+                <div class="box2"><a href="Matchl3u1.html"target="_self">&#129513 Ghép từ</a></div>
+                <div class="box3"><a href="nghegotvl4.html" target="_self">&#127911 Nghe chính tả</a></div>
+                <div class="box4">&#128221 Ngữ pháp</div>
+            </div>
+        </div>
+        <!-- Phần chính -->
+        <div style="height: 30px;"></div> 
+        <div style="display:grid;grid-template-columns: 105px 1fr 160px;">
+            <div style="display: grid;grid-template-columns: 105px;margin-left: 5px">
+                <p class="units"><a href="nghegotvl3.html" target="_self"><strong>Tổng hợp</strong></a></p>
+                <p class="targetunit"><strong>Starter</strong></p>
+                <p class="units"><a href="nghegotvl3u1.html" target="_self"><strong>Unit 1</strong></a></p>
+                <p class="units"><a href="nghegotvl3u2.html" target="_self"><strong>Unit 2</strong></a></p>
+                <p class="units"><a href="nghegotvl3u3.html" target="_self"><strong>Unit 3</strong></a></p>
+                <p class="units"><a href="nghegotvl3u4.html" target="_self"><strong>Unit 4</strong></a></p>
+                <p class="units"><a href="nghegotvl3u5.html" target="_self"><strong>Unit 5</strong></a></p>
+                <p class="units"><a href="nghegotvl3u6.html" target="_self"><strong>Unit 6</strong></a></p>
+            </div>
+        
+            <div class="wrap card" role="main">
+                <h1>LUYỆN NGHE CHÍNH TẢ TỪ VỰNG STARTER</h1>
+                <p class="lead">Nghe và gõ từ em nghe được vào ô trống phía dưới</p>
+
+                <div class="controls" role="region" aria-label="Điều khiển bài tập">
+                <button id="playBtn">▶ Phát</button>
+                <button id="repeatBtn" class="secondary">Xáo trộn từ</button>
+                <button id="checkBtn">✔ Kiểm tra</button>
+                <button id="nextBtn" class="secondary">➡ Tiếp theo</button>
+                <button id="showBtn" class="secondary">👁 Hiện đáp án</button>
+                <button id="resetBtn" class="danger">⟲ Reset</button>
+                </div>
+
+                <div class="input-row">
+                <label for="answer" class="sr-only">Gõ từ em nghe được</label>
+                <input id="answer" type="text" autocomplete="off" placeholder="Gõ từ em nghe được rồi nhấn Kiểm tra" />
+                <div class="pill small" id="langLabel">Ngôn ngữ: en-US</div>
+                </div>
+
+                <div class="feedback" id="feedback" aria-live="polite"></div>
+
+                <div class="progress">
+                <div class="small">Từ: <span id="index">0</span>/<span id="total">0</span></div>
+                <div class="score">Điểm: <span id="score">0</span></div>
+                </div>
+
+                <hr />
+                <ul class="word-list" id="wordList"></ul>
+            </div>
+
+            <script>
+                // Cấu hình: danh sách từ. Mỗi phần tử có {text, audioUrl(optional), lang(optional)}
+                const words = [
+                {text: 'red', lang: 'en-US', audioUrl: 'Auff3/05red.mp3'},
+                {text: 'brown', lang: 'en-US', audioUrl: 'Auff3/06brown.mp3'},
+                {text: 'pink', lang: 'en-US', audioUrl: 'Auff3/07pink.mp3'},
+                {text: 'green', lang: 'en-US', audioUrl: 'Auff3/08green.mp3'},
+                {text: 'black', lang: 'en-US', audioUrl: 'Auff3/09black.mp3'},
+                {text: 'yellow', lang: 'en-US', audioUrl: 'Auff3/10yellow.mp3'},
+                {text: 'orange', lang: 'en-US', audioUrl: 'Auff3/11orange.mp3'},
+                {text: 'blue', lang: 'en-US', audioUrl: 'Auff3/12blue.mp3'},
+                {text: 'sit down', lang: 'en-US', audioUrl: 'Auff3/13sitdown.mp3'},
+                {text: 'stand up', lang: 'en-US', audioUrl: 'Auff3/14standup.mp3'},
+                {text: 'open your book', lang: 'en-US', audioUrl: 'Auff3/15openyourbook.mp3'},
+                {text: 'close your book', lang: 'en-US', audioUrl: 'Auff3/16closeyourbook.mp3'},
+                {text: 'dont talk', lang: 'en-US', audioUrl: 'Auff3/17donttalk.mp3'}
+                ];
+
+                // Nếu muốn dùng file âm thanh thay thế TTS, set audioUrl: 'audio/files/apple.mp3'
+
+                // --- trạng thái ---
+                let idx = 0;
+                let score = 0;
+                
+                // --- element refs ---
+                const playBtn = document.getElementById('playBtn');
+                const repeatBtn = document.getElementById('repeatBtn');
+                const checkBtn = document.getElementById('checkBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                const showBtn = document.getElementById('showBtn');
+                const resetBtn = document.getElementById('resetBtn');
+                const answerInput = document.getElementById('answer');
+                const feedback = document.getElementById('feedback');
+                const indexEl = document.getElementById('index');
+                const totalEl = document.getElementById('total');
+                const scoreEl = document.getElementById('score');
+                const wordListEl = document.getElementById('wordList');
+                const langLabel = document.getElementById('langLabel');
+
+                // populate UI list
+                function renderWordList(){
+                wordListEl.innerHTML = '';
+                words.forEach(w=>{
+                    const li = document.createElement('li');
+                    li.textContent = w.text;
+                    wordListEl.appendChild(li);
+                });
+                }
+                renderWordList();
+
+                totalEl.textContent = words.length;
+
+                // helpers: speak using Web Speech API
+                function speakText(text, lang='en-US'){
+                if('speechSynthesis' in window){
+                    window.speechSynthesis.cancel();
+                    const u = new SpeechSynthesisUtterance(text);
+                    u.lang = lang;
+                    u.rate = 0.95; // hơi chậm để dễ nghe
+                    window.speechSynthesis.speak(u);
+                } else {
+                    // fallback: try audio element if provided or alert
+                    alert('Trình duyệt không hỗ trợ SpeechSynthesis. Bạn có thể dùng file âm thanh riêng.');
+                }
+                }
+
+                // play current item (use audioUrl if exists; otherwise TTS)
+                function playCurrent(){
+                const item = words[idx];
+                if(!item) return;
+                langLabel.textContent = 'Ngôn ngữ: ' + (item.lang || 'en-US');
+                if(item.audioUrl){
+                const a = new Audio(item.audioUrl);
+                a.play();
+                } else {
+                // use TTS
+                speakText(item.text, item.lang || 'en-US');
+                }
+                }
+
+                // check answer (case-insensitive, trim)
+                function normalize(s){
+                return s.toString().trim().toLowerCase();
+                }
+
+                function checkAnswer(){
+                const user = normalize(answerInput.value);
+                const correct = normalize(words[idx].text);
+                if(user === ''){
+                    feedback.innerHTML = '<span class="small">Bạn chưa gõ gì.</span>';
+                    return;
+                }
+                if(user === correct){
+                    feedback.innerHTML = `<strong style="color:var(--success)">Chính xác! ✔</strong> — ${words[idx].text}`;
+                    score += 1;
+                    scoreEl.textContent = score;
+                } else {
+                    feedback.innerHTML = `<strong style="color:var(--danger)">Sai</strong> — bạn gõ: <em>${escapeHtml(answerInput.value)}</em>.`; 
+                }
+                }
+
+                // helper to escape HTML in user input
+                function escapeHtml(unsafe){
+                return unsafe.replace(/[&<>"']/g, function(m){
+                    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m];
+                });
+                }
+
+                function nextItem(){
+                idx = (idx + 1) % words.length;
+                indexEl.textContent = idx + 1;
+                answerInput.value = '';
+                feedback.textContent = '';
+                // auto-play next
+                setTimeout(()=>playCurrent(), 200);
+                }
+
+                function showAnswer(){
+                feedback.innerHTML = `<span class="small">Đáp án: <strong>${words[idx].text}</strong></span>`;
+                }
+
+                function resetAll(){
+                idx = 0; score = 0; indexEl.textContent = idx + 1; scoreEl.textContent = score; answerInput.value = ''; feedback.textContent = '';
+                }
+
+                // init state
+                indexEl.textContent = idx + 1;
+                scoreEl.textContent = score;
+
+                // button events
+                playBtn.addEventListener('click', ()=>{
+                playCurrent();
+                answerInput.focus();
+                });
+                repeatBtn.addEventListener('click', ()=>{
+                shuffleWords();
+                answerInput.focus();
+                });
+                checkBtn.addEventListener('click', ()=>{
+                checkAnswer();
+                answerInput.focus();
+                });
+                nextBtn.addEventListener('click', ()=>{
+                nextItem();
+                answerInput.focus();
+                });
+                showBtn.addEventListener('click', ()=>{
+                showAnswer();
+                answerInput.focus();
+                });
+                resetBtn.addEventListener('click', ()=>{
+                if(confirm('Bạn muốn reset điểm và bắt đầu lại?')) resetAll();
+                answerInput.focus();
+                });
+
+                // --- SHUFFLE FUNCTION ---
+                function shuffleWords(){
+                for (let i = words.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [words[i], words[j]] = [words[j], words[i]];
+                }
+                idx = 0;
+                indexEl.textContent = idx + 1;
+                feedback.textContent = '';
+                answerInput.value = '';
+                renderWordList();
+                playCurrent();
+                }
+
+                // keyboard: Enter to check, Ctrl+Enter to next, Space to play
+                answerInput.addEventListener('keydown', (e)=>{
+                if(e.key === 'Enter' && !e.ctrlKey) { e.preventDefault(); checkAnswer(); }
+                if(e.key === 'Enter' && e.ctrlKey) { e.preventDefault(); nextItem(); }
+                if(e.code === 'Space' && e.target === answerInput) { /* allow typing space */ }
+                });
+
+                // accessibility: announce when speech ends (approximate)
+                if('speechSynthesis' in window){
+                window.speechSynthesis.onvoiceschanged = ()=>{/* no-op: ensures voices loaded */};
+                }
+
+                // allow easy customization by exposing variables (for teacher/dev)
+                window.EXERCISE = {words, playCurrent, checkAnswer, nextItem, resetAll};
+
+                // If you want to preload audio files set audioUrl in words array and they will play instead of TTS.
+            </script>
+            <div style="
+            display: grid;
+            grid-template-columns: 150px;margin-right: 5px;">
+            <p class="units"><a href="nghegotvl3f12.html" target="_self"><strong>Fluency Time 1-2</strong></a></p>
+            <p class="units"><a href="nghegotvl3u7.html" target="_self"><strong>Unit 7</strong></a></p>
+            <p class="units"><a href="nghegotvl3u8.html" target="_self"><strong>Unit 8</strong></a></p>
+            <p class="units"><a href="nghegotvl3u9.html" target="_self"><strong>Unit 9</strong></a></p>
+            <p class="units"><a href="nghegotvl3u10.html" target="_self"><strong>Unit 10</strong></a></p>
+            <p class="units"><a href="nghegotvl3u11.html" target="_self"><strong>Unit 11</strong></a></p>
+            <p class="units"><a href="nghegotvl3u12.html" target="_self"><strong>Unit 12</strong></a></p>
+            <p class="units"><a href="nghegotvl3f34.html" target="_self"><strong>Fluency Time 3-4</strong></a></p>
+            </div>
+        </div>
+        
+        <div style="height: 50px;"></div>
+    <!-- Phần chân trang -->
+    <div style="
+    display:grid;
+    grid-template-columns: 300px 350px 500px 250px;
+    background-color: rgb(176, 185, 176);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div>&#128241 Zalo: 0969 453 840 (Ms.Nhung)</div>
+        <div>&#128231 Email: thanhnhung846@gmail.com</div>
+        <div></div>
+        <div>Ho Chi Minh City, Viet Nam</div>
+    </div>
+
+    <!-- UNIQUE AUDIO FUNCTION -->
+    <script>
+        function playSound(id) {
+            const audio = document.getElementById(id);
+            if (audio) audio.play();
+        }
+    </script>
+    
+    </body>
+</html>

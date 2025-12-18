@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dropdownmenu.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+        <title>Ghép từ Lớp 5</title>
+        <style>
+            .Logo{
+                color: rgb(255, 255, 255);
+                font-size: xx-large;
+                font-weight: 700;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding-left: 20px;
+                padding-right: 30px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                background-color: rgb(114, 149, 77);
+                width: 400px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            
+            .TV5{
+                color:rgb(41, 53, 28);
+                text-align-last: center;
+                font-size: xx-large;
+                font-weight: 700;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                padding-top: 50px;
+                padding-bottom: 15px;                
+            }
+
+            .dangbaitap{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                color: rgb(42, 42, 42);
+                align-items: center;
+                text-align: center;
+                font-size: large;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+            
+                .box1{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box2{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box3{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box4{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+            .unitbutton{background-color: rgb(239, 239, 239);border-radius: 12px;color: black}
+            .chosenunitbutton{background-color: rgb(192, 121, 21);border-radius: 12px;color: rgb(255, 255, 255)}
+
+            :root{
+                --bg:white;
+                --card:#ffffff;
+                --accent:#2563eb;
+                --correct:#16a34a;
+                --wrong:#dc2626;
+            }
+
+                *{box-sizing:border-box}
+
+            .container{
+                max-width:1500px;
+                height: 100%;
+                margin:auto;
+                background:var(--card);
+                padding:16px;
+                border-radius:14px;
+                box-shadow:0 6px 24px rgba(0,0,0,.06);
+            }
+
+            h1{
+                font-size:1.2rem;
+                margin:0 0 12px;
+            }
+
+            /* ===== Matching 6 columns ===== */
+            .matching-area{
+                display:grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap:16px;
+                margin-top:16px;
+            }
+
+            /* Gộp hình + chữ vào cùng grid */
+            .images, .words{
+                display: contents;
+            }
+
+            .match-card{
+                border:2px dashed #c7d2fe;
+                border-radius:12px;
+                padding:10px;
+                background:#f8fafc;
+                min-height:140px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                transition:.2s;
+            }
+
+            .match-card img{
+                max-width:100%;
+                max-height:120px;
+                object-fit:contain;
+            }
+
+            .match-card.correct{
+                border-color:var(--correct);
+                background:#ecfdf5;
+            }
+
+            .match-card.wrong{
+                border-color:var(--wrong);
+                background:#fef2f2;
+            }
+
+            .word{
+                padding:14px;
+                background:#eef2ff;
+                border-radius:10px;
+                text-align:center;
+                font-weight:600;
+                cursor:grab;
+                user-select:none;
+                touch-action:none;
+            }
+
+            .word.dragging{opacity:.5;}
+
+        /* Mobile: 2 cột */
+            @media (max-width: 768px){
+            .matching-area{grid-template-columns: repeat(2, 1fr);}}
+
+            .controls{margin-top:16px;display:flex;gap:10px;}
+
+            button{flex:1;padding:12px;border-radius:10px;border:0;background:var(--accent);color:white;font-size:1rem;cursor:pointer;}
+        
+        </style>
+    </head>
+    <body>
+        <!-- Phần đầu trang -->
+        <div style="
+            display: grid;
+            grid-template-columns: 310px 1fr;">
+            <div class="Logo">Ms.Nhung English</div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li class="nav-link">
+                        <a href="#">Trang chủ</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Các khóa học</a>
+                    </li>
+
+                    <li class="nav-link services">
+                        <a href="#">Từ Vựng
+                            <span class="material-icons dropdown-icon">
+                                arrow_drop_down
+                            </span>
+                        </a>
+                        <ul class="drop-down">
+                            <li> <a href="tuvungtienganhlop2.html" target="_self">Lớp 2</a></li>
+                            <li> <a href="tuvungtienganhlop3.html" target="_self">Lớp 3</a></li>
+                            <li> <a href="tuvungtienganhlop4.html" target="_self">Lớp 4</a></li>
+                            <li> <a href="tuvungtienganhlop5.html" target="_self">Lớp 5</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Luyện Nghe</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Luyện Đọc</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">Ngữ Pháp</a>
+                    </li>
+
+                </ul>    
+            </nav>
+        </div>
+        <!-- Phần đề mục -->
+        <div style="
+            display: grid;
+            grid-template-rows: 2fr 1fr;">  
+            <div class="TV5">TIẾNG ANH LỚP 5</div>
+            <div class="dangbaitap">
+                <div class="box1"><a href="tuvungtienganhlop5.html"target="_self">&#128210 Bộ từ vựng</a></div>
+                <div class="box2">&#129513 Ghép từ</div>
+                <div class="box3"><a href="nghegotvl5.html" target="_self">&#127911 Nghe chính tả</a></div>
+                <div class="box4">&#128221 Ngữ pháp</div>
+            </div>
+        </div>
+        <!-- Phần chính -->
+        <div style="height: 5px;"></div> 
+        <div style="
+            display:grid;
+            grid-template-columns: repeat(14,1fr);
+            column-gap: 5px;">
+            <button class="unitbutton"><a href="Matchl5u1.html" target="_self"><strong>UNIT 1</strong></a></button>
+            <button class="unitbutton"><a href="Matchl5u2.html" target="_self"><strong>UNIT 2</strong></a></button>
+            <button class="chosenunitbutton"><strong>UNIT 3</strong></button>
+            <button class="unitbutton"><a href="Matchl5u4.html" target="_self"><strong>UNIT 4</strong></a></button>
+            <button class="unitbutton"><a href="Matchl5u5.html" target="_self"><strong>UNIT 5</strong></a></button>
+            <button class="unitbutton"><a href="Matchl5u6.html" target="_self"><strong>UNIT 6</strong></a></button>
+            <button class="unitbutton"><a href="Matchl5f1.html" target="_self"><strong>Fluency 1</strong></a></button>
+            <button class="unitbutton"><a href="Matchl5u7.html" target="_self"><strong>UNIT 7</strong></a></button>
+            <button class="unitbutton"><a href="Matchl5u8.html" target="_self"><strong>UNIT 8</strong></a></button>
+            <button class="unitbutton"><a href="Matchl5u9.html" target="_self"><strong>UNIT 9</strong></a></button>
+            <button class="unitbutton"><a href="Matchl5u10.html" target="_self"><strong>UNIT 10</strong></a></button>
+            <button class="unitbutton"><a href="Matchl5u11.html" target="_self"><strong>UNIT 11</strong></a></button>
+            <button class="unitbutton"><a href="Matchl5u12.html" target="_self"><strong>UNIT 12</strong></a></button>
+            <button class="unitbutton"><a href="Matchl5f2.html" target="_self"><strong>Fluency 2</strong></a></button>
+        </div>
+        <div class="container">
+            <h1>🧩 Nối hình với từ đúng</h1>
+
+            <section class="matching-area">
+            <div class="images" id="imageList"></div>
+            <div class="words" id="wordList"></div>
+            </section>
+
+            <div class="controls">
+            <button onclick="resetGame()" style="margin-top:16px;width:100%;padding:10px;color:white;background:rgb(99, 148, 73);border-radius: 12px;border:none;font-size: 20px;"> <strong>Làm lại</strong></button>
+            </div>
+        </div>
+
+        <!-- Sounds -->
+        <audio id="soundCorrect" src="correctsound.mp3" preload="auto"></audio>
+        <audio id="soundWrong" src="error sound.mp3" preload="auto"></audio>
+
+        <script>
+            /* ===== DATA ===== */
+            const MATCH_DATA = [
+            { word: "lemonade", image: "FlashcardsG5/25lemonade.PNG" },
+            { word: "mushrooms", image: "FlashcardsG5/26mushrooms.PNG" },
+            { word: "meat", image: "FlashcardsG5/27meat.PNG" },
+            { word: "melon", image: "FlashcardsG5/28melon.PNG" },
+            { word: "cucumber", image: "FlashcardsG5/29cucumber.PNG" },
+            { word: "onion", image: "FlashcardsG5/30onion.PNG" },
+            { word: "soda", image: "FlashcardsG5/31soda.PNG" },
+            { word: "icetea", image: "FlashcardsG5/32icetea.PNG" },
+            { word: "fishsauce", image: "FlashcardsG5/33fishsauce.PNG" },
+            { word: "ricepaper", image: "FlashcardsG5/34ricepaper.PNG" },
+            { word: "garlic", image: "FlashcardsG5/35garlic.PNG" },
+            { word: "beansprouts", image: "FlashcardsG5/36beansprouts.PNG" }
+            ];
+
+            const imageList = document.getElementById("imageList");
+            const wordList = document.getElementById("wordList");
+
+            const soundCorrect = document.getElementById("soundCorrect");
+            const soundWrong = document.getElementById("soundWrong");
+
+            let draggedWord = null;
+
+            function playSound(audio){
+            audio.currentTime = 0;
+            audio.play();
+            }
+
+            function shuffle(arr){
+            return arr.sort(() => Math.random() - 0.5);
+            }
+
+            function renderGame(){
+            imageList.innerHTML = "";
+            wordList.innerHTML = "";
+
+            shuffle([...MATCH_DATA]).forEach(item=>{
+                const card = document.createElement("div");
+                card.className = "match-card";
+                card.dataset.answer = item.word;
+
+                card.innerHTML = `<img src="${item.image}" alt="">`;
+                imageList.appendChild(card);
+            });
+
+            shuffle([...MATCH_DATA]).forEach(item=>{
+                const word = document.createElement("div");
+                word.className = "word";
+                word.textContent = item.word;
+                word.draggable = true;
+
+                word.addEventListener("dragstart", ()=>{
+                draggedWord = word;
+                word.classList.add("dragging");
+                });
+
+                word.addEventListener("dragend", ()=>{
+                draggedWord = null;
+                word.classList.remove("dragging");
+                });
+
+                // Mobile
+                word.addEventListener("pointerdown", ()=>{
+                draggedWord = word;
+                });
+
+                wordList.appendChild(word);
+            });
+
+            document.querySelectorAll(".match-card").forEach(card=>{
+                card.addEventListener("dragover", e=>e.preventDefault());
+                card.addEventListener("drop", ()=>checkMatch(card));
+                card.addEventListener("pointerup", ()=>checkMatch(card));
+            });
+            }
+
+            function checkMatch(card){
+            if(!draggedWord) return;
+
+            const correct = card.dataset.answer === draggedWord.textContent;
+
+            card.classList.remove("correct","wrong");
+            card.classList.add(correct ? "correct" : "wrong");
+
+            if(correct){
+                playSound(soundCorrect);
+                card.appendChild(draggedWord);
+                draggedWord.style.cursor = "default";
+                draggedWord.draggable = false;
+            }else{
+                playSound(soundWrong);
+            }
+
+            draggedWord = null;
+            }
+
+            function resetGame(){
+            renderGame();
+            }
+
+            renderGame();
+        </script>
+        
+        <div style="height: 50px;"></div>
+        
+    <!-- Phần chân trang -->
+    <div style="
+    display:grid;
+    grid-template-columns: 300px 350px 500px 250px;
+    background-color: rgb(176, 185, 176);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div>&#128241 Zalo: 0969 453 840 (Ms.Nhung)</div>
+        <div>&#128231 Email: thanhnhung846@gmail.com</div>
+        <div></div>
+        <div>Ho Chi Minh City, Viet Nam</div>
+    </div>        
+    
+    </body>
+</html>
