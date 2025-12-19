@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet">
-        <title>LỚP 2</title>
+        <title>Welcome</title>
         <style>
             :root{
-            --bg:#f6f8fb;
+            --bg:#d9e6de;
             --card:#ffffff;
             --accent:#2563eb;
             --correct:#16a34a;
@@ -25,7 +25,7 @@
             }
 
             .container{
-            max-width:1500px;
+            max-width:1000px;
             margin:auto;
             background:var(--card);
             padding:30px;
@@ -44,11 +44,12 @@
             .welcome{text-align: center;padding: 5px;}
 
             .butt {
-                background: rgb(93, 145, 93);
+                background: rgb(85, 148, 85);
                 border-radius: 16px;
                 padding: 15px;
                 text-align: center;
                 text-decoration: none;
+                font-size: larger;
                 font-weight: bold;
                 border:none;
                 transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -70,19 +71,36 @@
             display: block;
             margin: 20px auto;
             }
+
+            .device{text-align: center;font-weight: bold;font-size: 1.1rem;}
         </style>
 
     </head>
     <body>
         <div class="container">
-        <h1 style="text-align: center;font-size:x-large;"><strong>TIẾNG ANH LỚP 2</strong></h1>
-        <p class="welcome">Chào mừng em đến với góc luyện tập dành cho học viên của Ms.Nhung</p>
+        <h1 style="text-align: center;font-size:x-large;color:#117837"><strong>GÓC TỰ ÔN TẬP DÀNH CHO HỌC VIÊN</strong></h1>
+        <p class="welcome">Chào mừng em đến với góc luyện tập Tiếng Anh dành cho học viên của Ms.Nhung</p>
         <img src="welcome.png" alt="Welcome" class="center-img">
-        <p style="text-align: center;">Chọn thiết bị em đang dùng</p>
+        <p style="text-align: center;">Chọn lớp và thiết bị em đang dùng</p>
         <div style="display:grid;
-            grid-template-columns: repeat(2,300px);column-gap: 20px;place-content: center;margin-top: 30px;margin-bottom: 50px;">
-            <button class="butt"><a href="tuvungtienganhlop2.html" target="_self">💻Computer/ Laptop</a></button>
-            <button class="butt"><a href="tuvungtienganhlop2.html" target="_self">📱Mobile</a></button>
+            grid-template-columns: repeat(2,300px);column-gap: 20px;place-content: center;margin-top: 30px;margin-bottom: 50px;row-gap: 10px;">
+            <div class="device">
+                MÁY TÍNH/ LAPTOP<br>
+                (Khuyên dùng)
+            </div>
+            <div class="device">ĐIỆN THOẠI<br>(đang cập nhật)</div>
+            
+            <button class="butt"><a href="tuvungtienganhlop2.html" target="_self">💻 LỚP 2</a></button>
+            <button class="butt"><a href="tuvungtienganhlop2.html" target="_self">📱 LỚP 2</a></button>
+
+            <button class="butt"><a href="tuvungtienganhlop3.html" target="_self">💻 LỚP 3</a></button>
+            <button class="butt"><a href="tuvungtienganhlop3.html" target="_self">📱 LỚP 3</a></button>
+
+            <button class="butt"><a href="tuvungtienganhlop4.html" target="_self">💻 LỚP 4</a></button>
+            <button class="butt"><a href="tuvungtienganhlop4.html" target="_self">📱 LỚP 4</a></button>
+
+            <button class="butt"><a href="tuvungtienganhlop5.html" target="_self">💻 LỚP 5</a></button>
+            <button class="butt"><a href="tuvungtienganhlop5.html" target="_self">📱 LỚP 5</a></button>
         </div>
         </div>
     </body>    
