@@ -135,37 +135,39 @@
                 background:#fef2f2;
             }
 
+            /* ===== WORD ===== */
             .word{
-                padding:14px;
-                background:#eef2ff;
-                border-radius:10px;
-                text-align:center;
-                font-weight:600;
-                cursor:grab;
-                user-select:none;
-                touch-action:none;
+              padding:14px;
+              background:#eef2ff;
+              border-radius:10px;
+              text-align:center;
+              font-weight:600;
+              cursor:grab;
+              user-select:none;
+              touch-action:none;
+              transition:.2s;
             }
-
-            .word.dragging{opacity:.5;}
-
-            /* Word đang được chọn */
+            
+            /* đang chọn */
             .word.active{
-              background:#2563eb;
+              background:var(--accent);
               color:white;
             }
             
-            /* Word đúng */
+            /* đúng */
             .word.matched{
-              background:#16a34a;
+              background:var(--correct);
               color:white;
               cursor:default;
             }
             
-            /* Word sai (nháy nhẹ) */
+            /* sai */
             .word.wrong{
-              background:#dc2626;
+              background:var(--wrong);
               color:white;
             }
+            
+            .word.dragging{ opacity:.5 }
 
         /* Mobile: 2 cột */
             @media (max-width: 768px){
@@ -377,12 +379,11 @@
 
             const imageList = document.getElementById("imageList");
             const wordList = document.getElementById("wordList");
-
             const soundCorrect = document.getElementById("soundCorrect");
             const soundWrong = document.getElementById("soundWrong");
-
+            
             let draggedWord = null;
-
+            
             /* ===== UTILS ===== */
             function shuffle(arr){
               return arr.sort(() => Math.random() - 0.5);
@@ -392,36 +393,33 @@
               audio.currentTime = 0;
               audio.play();
             }
-          
+            
             /* ===== RENDER ===== */
             function renderGame(){
-            imageList.innerHTML = "";
-            wordList.innerHTML = "";
-
-            shuffle([...MATCH_DATA]).forEach(item=>{
+              imageList.innerHTML = "";
+              wordList.innerHTML = "";
+            
+              shuffle([...MATCH_DATA]).forEach(item=>{
                 const card = document.createElement("div");
                 card.className = "match-card";
                 card.dataset.answer = item.word;
-
-                card.innerHTML = `<img src="${item.image}" alt="">`;
+                card.innerHTML = `<img src="${item.image}">`;
                 imageList.appendChild(card);
-            });
-
-            shuffle([...MATCH_DATA]).forEach(item=>{
+              });
+            
+              shuffle([...MATCH_DATA]).forEach(item=>{
                 const word = document.createElement("div");
                 word.className = "word";
                 word.textContent = item.word;
                 word.draggable = true;
-
-                /* CLICK / TAP */
+            
+                /* click / tap */
                 word.addEventListener("click", ()=>{
-                  document.querySelectorAll(".word").forEach(w=>{
-                    w.classList.remove("active");
-                  });
+                  document.querySelectorAll(".word").forEach(w=>w.classList.remove("active"));
                   draggedWord = word;
                   word.classList.add("active");
                 });
-              
+            
                 /* PC drag */
                 word.addEventListener("dragstart", ()=>{
                   draggedWord = word;
@@ -442,7 +440,14 @@
             
                 wordList.appendChild(word);
               });
-
+            
+              document.querySelectorAll(".match-card").forEach(card=>{
+                card.addEventListener("dragover", e=>e.preventDefault());
+                card.addEventListener("drop", ()=>checkMatch(card));
+                card.addEventListener("pointerup", ()=>checkMatch(card));
+              });
+            }
+            
             /* ===== CHECK ===== */
             function checkMatch(card){
               if(!draggedWord) return;
@@ -498,6 +503,7 @@
     </body>
 
 </html>
+
 
 
 
