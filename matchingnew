@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>🧩 Matching Game – Vocabulary</title>
+
+<style>
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --accent:#2563eb;
+  --correct:#16a34a;
+  --wrong:#dc2626;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  padding:16px;
+}
+
+.container{
+  max-width:1500px;
+  margin:auto;
+  background:var(--card);
+  padding:16px;
+  border-radius:14px;
+  box-shadow:0 6px 24px rgba(0,0,0,.06);
+}
+
+h1{
+  font-size:1.2rem;
+  margin:0 0 12px;
+}
+
+/* ===== GRID ===== */
+.matching-area{
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap:16px;
+  margin-top:16px;
+}
+
+.images, .words{ display: contents; }
+
+/* ===== CARD ===== */
+.match-card{
+  border:2px dashed #c7d2fe;
+  border-radius:12px;
+  padding:10px;
+  background:#f8fafc;
+  min-height:140px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.2s;
+}
+
+.match-card img{
+  max-width:100%;
+  max-height:120px;
+  object-fit:contain;
+}
+
+.match-card.correct{
+  border-color:var(--correct);
+  background:#ecfdf5;
+}
+
+.match-card.wrong{
+  border-color:var(--wrong);
+  background:#fef2f2;
+}
+
+/* ===== WORD ===== */
+.word{
+  padding:14px;
+  background:#eef2ff;
+  border-radius:10px;
+  text-align:center;
+  font-weight:600;
+  cursor:grab;
+  user-select:none;
+  touch-action:none;
+  transition:.2s;
+}
+
+/* đang chọn */
+.word.active{
+  background:var(--accent);
+  color:white;
+}
+
+/* đúng */
+.word.matched{
+  background:var(--correct);
+  color:white;
+  cursor:default;
+}
+
+/* sai */
+.word.wrong{
+  background:var(--wrong);
+  color:white;
+}
+
+.word.dragging{ opacity:.5 }
+
+/* ===== MOBILE ===== */
+@media (max-width:768px){
+  .matching-area{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== BUTTON ===== */
+.controls{
+  margin-top:16px;
+  display:flex;
+  gap:10px;
+}
+
+button{
+  flex:1;
+  padding:12px;
+  border-radius:10px;
+  border:0;
+  background:var(--accent);
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>🧩 Nối hình với từ đúng</h1>
+
+  <section class="matching-area">
+    <div class="images" id="imageList"></div>
+    <div class="words" id="wordList"></div>
+  </section>
+
+  <div class="controls">
+    <button onclick="resetGame()">🔄 Làm lại</button>
+  </div>
+</div>
+
+<!-- Sounds -->
+<audio id="soundCorrect" src="correctsound.mp3" preload="auto"></audio>
+<audio id="soundWrong" src="errorsound.mp3" preload="auto"></audio>
+
+<script>
+/* ===== DATA ===== */
+const MATCH_DATA = [
+  { word:"happy", image:"Flashcards/IM15.png" },
+  { word:"sad", image:"Flashcards/IM16.png" },
+  { word:"hungry", image:"Flashcards/IM17.png" },
+  { word:"thirsty", image:"Flashcards/IM18.png" },
+  { word:"hot", image:"Flashcards/IM19.png" },
+  { word:"cold", image:"Flashcards/IM20.png" },
+  { word:"dress", image:"Flashcards/IM21.png" },
+  { word:"socks", image:"Flashcards/IM22.png" },
+  { word:"T-shirt", image:"Flashcards/IM23.png" },
+  { word:"pants", image:"Flashcards/IM24.png" },
+  { word:"shorts", image:"Flashcards/IM25.png" },
+  { word:"shoes", image:"Flashcards/IM26.png" }
+];
+
+const imageList = document.getElementById("imageList");
+const wordList = document.getElementById("wordList");
+const soundCorrect = document.getElementById("soundCorrect");
+const soundWrong = document.getElementById("soundWrong");
+
+let draggedWord = null;
+
+/* ===== UTILS ===== */
+function shuffle(arr){
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+function playSound(audio){
+  audio.currentTime = 0;
+  audio.play();
+}
+
+/* ===== RENDER ===== */
+function renderGame(){
+  imageList.innerHTML = "";
+  wordList.innerHTML = "";
+
+  shuffle([...MATCH_DATA]).forEach(item=>{
+    const card = document.createElement("div");
+    card.className = "match-card";
+    card.dataset.answer = item.word;
+    card.innerHTML = `<img src="${item.image}">`;
+    imageList.appendChild(card);
+  });
+
+  shuffle([...MATCH_DATA]).forEach(item=>{
+    const word = document.createElement("div");
+    word.className = "word";
+    word.textContent = item.word;
+    word.draggable = true;
+
+    /* click / tap */
+    word.addEventListener("click", ()=>{
+      document.querySelectorAll(".word").forEach(w=>w.classList.remove("active"));
+      draggedWord = word;
+      word.classList.add("active");
+    });
+
+    /* PC drag */
+    word.addEventListener("dragstart", ()=>{
+      draggedWord = word;
+      document.querySelectorAll(".word").forEach(w=>w.classList.remove("active"));
+      word.classList.add("active","dragging");
+    });
+
+    word.addEventListener("dragend", ()=>{
+      word.classList.remove("dragging");
+    });
+
+    /* Mobile */
+    word.addEventListener("pointerdown", ()=>{
+      draggedWord = word;
+      document.querySelectorAll(".word").forEach(w=>w.classList.remove("active"));
+      word.classList.add("active");
+    });
+
+    wordList.appendChild(word);
+  });
+
+  document.querySelectorAll(".match-card").forEach(card=>{
+    card.addEventListener("dragover", e=>e.preventDefault());
+    card.addEventListener("drop", ()=>checkMatch(card));
+    card.addEventListener("pointerup", ()=>checkMatch(card));
+  });
+}
+
+/* ===== CHECK ===== */
+function checkMatch(card){
+  if(!draggedWord) return;
+
+  const correct = card.dataset.answer === draggedWord.textContent;
+
+  card.classList.remove("correct","wrong");
+  card.classList.add(correct ? "correct" : "wrong");
+
+  draggedWord.classList.remove("active","wrong");
+
+  if(correct){
+    playSound(soundCorrect);
+    draggedWord.classList.add("matched");
+    draggedWord.draggable = false;
+    card.appendChild(draggedWord);
+  }else{
+    playSound(soundWrong);
+    draggedWord.classList.add("wrong");
+    setTimeout(()=>{
+      draggedWord.classList.remove("wrong","active");
+    },600);
+  }
+
+  draggedWord = null;
+}
+
+/* ===== RESET ===== */
+function resetGame(){
+  renderGame();
+}
+
+renderGame();
+</script>
+</body>
+</html>
