@@ -95,6 +95,112 @@
 
             .targetunit:hover {transform: scale(1.1);}
             .units:hover {transform: scale(1.1);}
+
+            /* =======================
+           MOBILE OPTIMIZATION
+           ======================= */
+        @media (max-width: 768px) {
+        
+            /* HEADER */
+            .Logo{
+                width:100%;
+                text-align:center;
+                padding:16px;
+                font-size:22px;
+            }
+        
+            body > div:first-child{
+                grid-template-columns:1fr !important;
+            }
+        
+            /* NAV */
+            .navbar ul{
+                flex-direction:column;
+                gap:8px;
+                padding:10px;
+            }
+        
+            /* TITLE */
+            .TV2{
+                font-size:22px;
+                padding-top:20px;
+            }
+        
+            /* DẠNG BÀI TẬP */
+            .dangbaitap{
+                grid-template-columns:1fr 1fr;
+                gap:8px;
+                font-size:16px;
+                padding:0 10px;
+            }
+        
+            .dangbaitap div{
+                padding:12px 6px;
+                border-radius:8px;
+            }
+        
+            /* MAIN LAYOUT */
+            body > div:nth-of-type(3){
+                grid-template-columns:1fr !important;
+            }
+        
+            /* UNIT MENU → SCROLL NGANG */
+            body > div:nth-of-type(3) > div:first-child{
+                display:flex;
+                flex-direction:row;
+                overflow-x:auto;
+                gap:8px;
+                padding:10px;
+            }
+        
+            .units, .targetunit{
+                min-width:90px;
+                text-align:center;
+                font-size:14px;
+                border-radius:8px;
+            }
+        
+            /* CARD */
+            .wrap{
+                margin:0;
+                padding:12px;
+            }
+        
+            .card{
+                padding:16px;
+            }
+        
+            h1{
+                font-size:20px;
+                text-align:center;
+            }
+        
+            /* BUTTONS */
+            .controls{
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:10px;
+            }
+        
+            button{
+                font-size:15px;
+                padding:12px;
+            }
+        
+            /* INPUT */
+            input[type="text"]{
+                font-size:16px;
+            }
+        
+            /* FOOTER */
+            body > div:last-of-type{
+                grid-template-columns:1fr;
+                gap:10px;
+                text-align:center;
+                padding:16px;
+            }
+        }
+
         </style>
     </head>
     <body>
@@ -477,4 +583,5 @@
     </script>
     
     </body>
+
 </html>
