@@ -69,30 +69,26 @@
             .units{background-color: rgb(239, 239, 239);border-radius: 12px;color: black}
             .targetunit{background-color: rgb(192, 121, 21);border-radius: 12px;color: rgb(255, 255, 255)}
 
-            :root{
-                --bg:white;
-                --card:#ffffff;
-                --accent:#2563eb;
-                --correct:#16a34a;
-                --wrong:#dc2626;
-            }
-
-                *{box-sizing:border-box}
-
-            .container{
-                max-width:1500px;
-                height: 100%;
-                margin:auto;
-                background:var(--card);
-                padding:16px;
-                border-radius:14px;
-                box-shadow:0 6px 24px rgba(0,0,0,.06);
-            }
-
-            h1{
-                font-size:1.2rem;
-                margin:0 0 12px;
-            }
+            :root{--bg:white;--card:#fff;--accent:rgb(83, 113, 83);--success:#16a34a;--danger:#ef4444}
+            body{font-family:system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:var(--bg);color:#0f172a}
+            .wrap{max-width:1050px;margin:none;padding:20px;margin-left: 100px}
+            .card{background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06);padding:30px}
+            h1{margin:0 0 8px;font-size:22px}
+            p.lead{margin:0 0 18px;color:#334155}
+            .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+            button{background:var(--accent);color:white;border:0;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+            button.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+            button.danger{background:var(--danger)}
+            button:active{transform:translateY(1px)}
+            .input-row{display:flex;gap:8px;align-items:center;margin:12px 0}
+            input[type="text"]{flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef8;font-size:16px}
+            .feedback{min-height:28px;margin-top:8px}
+            .progress{display:flex;gap:8px;align-items:center;margin-top:12px}
+            .score{margin-left:auto;font-weight:700}
+            ul.word-list{display:none;gap:8px;flex-wrap:wrap;padding:0;margin:12px 0 0;list-style:none}
+            ul.word-list li{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:14px}
+            .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+            @media (max-width:520px){.wrap{margin:16px;padding:12px}}
 
             
         /* Mobile: 2 cột */
@@ -201,19 +197,7 @@
                 </ul>    
             </nav>
         </div>
-        <!-- Phần đề mục -->
-        <div style="
-            display: grid;
-            grid-template-rows: 2fr 1fr;">  
-            <div class="TV2">TIẾNG ANH LỚP 2</div>
-            <div class="dangbaitap">
-                <div class="box1"><a href="tuvungtienganhlop2.html"target="_self">&#128210 Bộ từ vựng</a></div>
-                <div class="box2">&#129513 Ghép từ</div>
-                <div class="box3"><a href="nghegotvl2.html" target="_self">&#127911 Nghe chính tả</a></div>
-                <div class="box4">&#128221 Ngữ pháp</div>
-            </div>
-        </div>
-        <!-- Phần chính -->
+        
         <!-- Phần đề mục -->
         <div style="
             display: grid;
@@ -543,6 +527,7 @@
     </body>
 
 </html>
+
 
 
 
