@@ -101,7 +101,12 @@
 .services.open .drop-down{
   display:block;
 }
-
+  
+.top-header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 .TV2{
   color:rgb(41, 53, 28);
   text-align-last: center;
@@ -193,13 +198,25 @@ ul.word-list li{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:
 @media (max-width:520px){.wrap{margin:16px;padding:12px}}
             
 .targetunit{background-color: rgb(192, 121, 21);border-radius: 12px;color: rgb(255, 255, 255);padding:12px;}
-.units{background-color: rgb(239, 239, 239);border-radius: 12px;color: black;padding:12px;}            
+.units{background-color: rgb(239, 239, 239);border-radius: 12px;color: black;padding:12px;}   
+main{padding-top: 60px;}
 /* ===== MOBILE ===== */
 @media (max-width:768px){
   .hamburger{
     display:block;
   }
 
+  @media (max-width:768px){
+  .nav-links{
+    position: fixed;        /* QUAN TRỌNG */
+    top: 60px;              /* chiều cao header */
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 2000;          /* CAO HƠN unit-scroll */
+  }
+}
+  
   .nav-links{
     display:none;
     flex-direction:column;
@@ -281,6 +298,8 @@ padding:16px;
   .unit-scroll{
     overflow-x:auto;
     -webkit-overflow-scrolling:touch;
+    position: relative;
+    z-index: 1;
   }
 
   .unit-grid{
@@ -711,6 +730,7 @@ padding:16px;
   </div>
 </footer>
 </html>
+
 
 
 
