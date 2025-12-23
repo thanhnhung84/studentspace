@@ -276,6 +276,25 @@ text-align:center;
 padding:16px;
 }
 }
+
+@media (max-width:768px){
+  .unit-scroll{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .unit-grid{
+    display:flex;
+    gap:8px;
+    min-width:max-content;
+  }
+
+  .unitbutton,
+  .chosenunitbutton{
+    min-width:90px;
+    flex-shrink:0;
+  }
+}
 </style>
 </head>
 
@@ -327,20 +346,21 @@ padding:16px;
 <main>
   <!-- Phần chính -->
         <div style="height: 5px;"></div> 
-        <div style="
-            display:grid;
-            grid-template-columns: repeat(8,1fr);
-            column-gap: 5px; text-align: center;margin-bottom: 20px;">
-            <p class="targetunit"><strong>Tổng hợp</strong></p>
-            <p class="units"><a href="nghegotvl2u1.html" target="_self"><strong>Unit 1</strong></a></p>
-            <p class="units"><a href="nghegotvl2u2.html" target="_self"><strong>Unit 2</strong></a></p>
-            <p class="units"><a href="nghegotvl2u3.html" target="_self"><strong>Unit 3</strong></a></p>
-            <p class="units"><a href="nghegotvl2u4.html" target="_self"><strong>Unit 4</strong></a></p>
-            <p class="units"><a href="nghegotvl2u5.html" target="_self"><strong>Unit 5</strong></a></p>
-            <p class="units"><a href="nghegotvl2u6.html" target="_self"><strong>Unit 6</strong></a></p>
-            <p class="units"><a href="nghegotvl2uculture.html" target="_self"><strong>Culture</strong></a></p>
-        </div>
-        
+        <div class="unit-scroll"> 
+          <div class="unit-grid" style="
+              display:grid;
+              grid-template-columns: repeat(8,1fr);
+              column-gap: 5px; text-align: center;margin-bottom: 20px;">
+              <p class="targetunit"><strong>Tổng hợp</strong></p>
+              <p class="units"><a href="nghegotvl2u1.html" target="_self"><strong>Unit 1</strong></a></p>
+              <p class="units"><a href="nghegotvl2u2.html" target="_self"><strong>Unit 2</strong></a></p>
+              <p class="units"><a href="nghegotvl2u3.html" target="_self"><strong>Unit 3</strong></a></p>
+              <p class="units"><a href="nghegotvl2u4.html" target="_self"><strong>Unit 4</strong></a></p>
+              <p class="units"><a href="nghegotvl2u5.html" target="_self"><strong>Unit 5</strong></a></p>
+              <p class="units"><a href="nghegotvl2u6.html" target="_self"><strong>Unit 6</strong></a></p>
+              <p class="units"><a href="nghegotvl2uculture.html" target="_self"><strong>Culture</strong></a></p>
+          </div>
+        </div> 
         <div class="wrap card" role="main">
             <h1>LUYỆN NGHE CHÍNH TẢ TỪ VỰNG LỚP 2</h1>
             <p class="lead">Gõ từ em nghe được vào ô trống phía dưới</p>
@@ -671,6 +691,8 @@ document.addEventListener('click',(e)=>{
 
 </body>
 </html>
+
+
 
 
 
