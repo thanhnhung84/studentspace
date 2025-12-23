@@ -135,18 +135,40 @@
                 background:#fef2f2;
             }
 
+            /* ===== WORD ===== */
             .word{
-                padding:14px;
-                background:#eef2ff;
-                border-radius:10px;
-                text-align:center;
-                font-weight:600;
-                cursor:grab;
-                user-select:none;
-                touch-action:none;
+              padding:14px;
+              background:#eef2ff;
+              border-radius:10px;
+              text-align:center;
+              font-weight:600;
+              cursor:grab;
+              user-select:none;
+              touch-action:none;
+              transition:.2s;
             }
+            
+            /* đang chọn */
+            .word.active{
+              background:var(--accent);
+              color:white;
+            }
+            
+            /* đúng */
+            .word.matched{
+              background:var(--correct);
+              color:white;
+              cursor:default;
+            }
+            
+            /* sai */
+            .word.wrong{
+              background:var(--wrong);
+              color:white;
+            }
+            
+            .word.dragging{ opacity:.5 }
 
-            .word.dragging{opacity:.5;}
 
         /* Mobile: 2 cột */
             @media (max-width: 768px){
@@ -438,3 +460,4 @@
     </body>
 
 </html>
+
