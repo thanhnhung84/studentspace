@@ -440,6 +440,12 @@ padding:16px;
             </div>
 
             <script>
+              hamburger.addEventListener('click', ()=>{
+              navLinks.classList.toggle('active');
+              hamburger.querySelector('span').textContent =
+                navLinks.classList.contains('active') ? 'close' : 'menu';
+              });
+
                 // Cấu hình: danh sách từ. Mỗi phần tử có {text, audioUrl(optional), lang(optional)}
                 const words = [
                 {text: 'this is orange', lang: 'en-US', audioUrl: 'Auff2/05Orange.mp3'},
@@ -730,6 +736,7 @@ padding:16px;
   </div>
 </footer>
 </html>
+
 
 
 
