@@ -648,13 +648,36 @@ padding:16px;
                 const audio = document.getElementById(id);
                 if (audio) audio.play();
                 }
+
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+                const serviceLink = document.querySelector('.services > a');
+                const serviceItem = document.querySelector('.services');
+                
+                hamburger.addEventListener('click', ()=>{
+                  navLinks.classList.toggle('active');
+                });
+                
+                // dropdown "Từ vựng"
+                serviceLink.addEventListener('click',(e)=>{
+                  e.preventDefault();
+                  serviceItem.classList.toggle('open');
+                });
+                
+                // click ngoài thì đóng dropdown
+                document.addEventListener('click',(e)=>{
+                  if(!serviceItem.contains(e.target)){
+                    serviceItem.classList.remove('open');
+                  }
+                });
             </script>
-</main>
+  </main>
+</body>
 <footer>
   <!-- Phần chân trang -->
     <div style="
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 300px 350px 500px 250px;
     background-color: rgb(176, 185, 176);
     padding-top: 20px;
     padding-bottom: 20px;
@@ -662,38 +685,12 @@ padding:16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
         <div>&#128241 Zalo: 0969 453 840 (Ms.Nhung)</div>
         <div>&#128231 Email: thanhnhung846@gmail.com</div>
+        <div></div>
         <div>Ho Chi Minh City, Viet Nam</div>
     </div>
 </footer>
-
-<!-- JS -->
-<script>
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const serviceLink = document.querySelector('.services > a');
-const serviceItem = document.querySelector('.services');
-
-hamburger.addEventListener('click', ()=>{
-  navLinks.classList.toggle('active');
-});
-
-// dropdown "Từ vựng"
-serviceLink.addEventListener('click',(e)=>{
-  e.preventDefault();
-  serviceItem.classList.toggle('open');
-});
-
-// click ngoài thì đóng dropdown
-document.addEventListener('click',(e)=>{
-  if(!serviceItem.contains(e.target)){
-    serviceItem.classList.remove('open');
-  }
-});
-
-</script>
-
-</body>
 </html>
+
 
 
 
