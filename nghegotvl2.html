@@ -96,6 +96,62 @@
             .targetunit:hover {transform: scale(1.1);}
             .units:hover {transform: scale(1.1);}
 
+           /* Mobile: 2 cột */
+            @media (max-width: 768px){
+            .matching-area{grid-template-columns: repeat(2, 1fr);}}
+
+            .controls{margin-top:16px;display:flex;gap:10px;}
+
+            button{flex:1;padding:12px;border-radius:10px;border:0;background:var(--accent);color:white;font-size:1rem;cursor:pointer;}
+
+            @media (max-width:768px){
+            .Logo{
+                width:100%;
+                text-align:center;
+                padding:12px;
+                font-size:1.4rem;
+            }
+            
+            body > div:first-child{
+                grid-template-columns:1fr !important;
+            }
+            
+            nav.navbar{
+                overflow-x:auto;
+            }
+            
+            .nav-links{
+                display:flex;
+                gap:12px;
+                white-space:nowrap;
+            }
+            }
+            @media (max-width:768px){
+            .dangbaitap{
+                grid-template-columns: 1fr 1fr;
+                gap:8px;
+                font-size:1rem;
+            }
+            
+            .dangbaitap div{
+                padding:10px 0;
+                border-radius:10px;
+            }
+            }
+                @media (max-width:768px){
+            body > div:nth-of-type(4){
+                display:flex !important;
+                overflow-x:auto;
+                gap:8px;
+                padding-bottom:10px;
+            }
+            
+            body > div:nth-of-type(4) button{
+                min-width:110px;
+                font-size:0.9rem;
+            }
+            }
+
         </style>
     </head>
     <body>
@@ -156,51 +212,52 @@
             </div>
         </div>
         <!-- Phần chính -->
-        <div style="height: 30px;"></div> 
+        <div style="height: 5px;"></div> 
         <div style="
             display:grid;
-            grid-template-columns: 100px 1fr;">
-            <div style="
-                display: grid;
-                grid-template-columns: 100px;">
-                <p class="targetunit"><strong>Tổng hợp</strong></p>
-                <p class="units"><a href="nghegotvl2u1.html" target="_self"><strong>Unit 1</strong></a></p>
-                <p class="units"><a href="nghegotvl2u2.html" target="_self"><strong>Unit 2</strong></a></p>
-                <p class="units"><a href="nghegotvl2u3.html" target="_self"><strong>Unit 3</strong></a></p>
-                <p class="units"><a href="nghegotvl2u4.html" target="_self"><strong>Unit 4</strong></a></p>
-                <p class="units"><a href="nghegotvl2u5.html" target="_self"><strong>Unit 5</strong></a></p>
-                <p class="units"><a href="nghegotvl2u6.html" target="_self"><strong>Unit 6</strong></a></p>
-                <p class="units"><a href="nghegotvl2uculture.html" target="_self"><strong>Culture</strong></a></p>
-            </div>
+            grid-template-columns: repeat(8,1fr);
+            column-gap: 5px;">
+            <p class="targetunit"><strong>Tổng hợp</strong></p>
+            <p class="units"><a href="nghegotvl2u1.html" target="_self"><strong>Unit 1</strong></a></p>
+            <p class="units"><a href="nghegotvl2u2.html" target="_self"><strong>Unit 2</strong></a></p>
+            <p class="units"><a href="nghegotvl2u3.html" target="_self"><strong>Unit 3</strong></a></p>
+            <p class="units"><a href="nghegotvl2u4.html" target="_self"><strong>Unit 4</strong></a></p>
+            <p class="units"><a href="nghegotvl2u5.html" target="_self"><strong>Unit 5</strong></a></p>
+            <p class="units"><a href="nghegotvl2u6.html" target="_self"><strong>Unit 6</strong></a></p>
+            <p class="units"><a href="nghegotvl2uculture.html" target="_self"><strong>Culture</strong></a></p>
+        </div>
         
-            <div class="wrap card" role="main">
-                <h1>LUYỆN NGHE CHÍNH TẢ TỪ VỰNG LỚP 2</h1>
-                <p class="lead">Nghe và gõ từ em nghe được vào ô trống phía dưới</p>
+        <div class="wrap card" role="main">
+            <h1>LUYỆN NGHE CHÍNH TẢ TỪ VỰNG LỚP 2</h1>
+            <p class="lead">Nghe và gõ từ em nghe được vào ô trống phía dưới</p>
 
-                <div class="controls" role="region" aria-label="Điều khiển bài tập">
-                <button id="playBtn">▶ Phát</button>
-                <button id="repeatBtn" class="secondary">Xáo trộn từ</button> 
-                <button id="checkBtn">✔ Kiểm tra</button>
-                <button id="nextBtn" class="secondary">➡ Tiếp theo</button>
-                <button id="showBtn" class="secondary">👁 Hiện đáp án</button>
-                <button id="resetBtn" class="danger">⟲ Reset</button>
-                </div>
+            <div class="controls" role="region" aria-label="Điều khiển bài tập">
+            <button id="playBtn">▶ Phát</button>
+            <button id="repeatBtn" class="secondary">Xáo trộn từ</button> 
+            <button id="checkBtn">✔ Kiểm tra</button>
+            </div>
 
-                <div class="input-row">
-                <label for="answer" class="sr-only">Gõ từ em nghe được</label>
-                <input id="answer" type="text" autocomplete="off" placeholder="Gõ từ em nghe được rồi nhấn Kiểm tra" />
-                <div class="pill small" id="langLabel">Ngôn ngữ: en-US</div>
-                </div>
+            <div class="input-row">
+            <label for="answer" class="sr-only">Gõ từ em nghe được</label>
+            <input id="answer" type="text" autocomplete="off" placeholder="Gõ từ em nghe được rồi nhấn Kiểm tra" />
+            <div class="pill small" id="langLabel">Ngôn ngữ: en-US</div>
+            </div>
 
-                <div class="feedback" id="feedback" aria-live="polite"></div>
+            <div class="feedback" id="feedback" aria-live="polite"></div>
 
-                <div class="progress">
-                <div class="small">Từ: <span id="index">0</span>/<span id="total">0</span></div>
-                <div class="score">Điểm: <span id="score">0</span></div>
-                </div>
+            <div class="controls" role="region" aria-label="Điều khiển bài tập">
+            <button id="nextBtn" class="secondary">➡ Tiếp theo</button>
+            <button id="showBtn" class="secondary">👁 Hiện đáp án</button>
+            <button id="resetBtn" class="danger">⟲ Reset</button>
+            </div>
 
-                <hr />
-                <ul class="word-list" id="wordList"></ul>
+            <div class="progress">
+            <div class="small">Từ: <span id="index">0</span>/<span id="total">0</span></div>
+            <div class="score">Điểm: <span id="score">0</span></div>
+            </div>
+
+            <hr />
+            <ul class="word-list" id="wordList"></ul>
             </div>
 
             <script>
@@ -450,7 +507,7 @@
 
                 // If you want to preload audio files set audioUrl in words array and they will play instead of TTS.
             </script>
-        </div>
+        
         
         <div style="height: 50px;"></div>
         
@@ -480,4 +537,7 @@
     </body>
 
 </html>
+
+
+
 
