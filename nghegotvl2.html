@@ -1,447 +1,209 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUYỆN NGHE LỚP 2</title>
-
-<!-- Material Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<style>
-/* RESET */
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial, sans-serif;
-}
-
-/* ===== HEADER ===== */
-.top-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:#72954d;
-  color:white;
-  padding:0 10px;
-}
-
-/* LOGO */
-.Logo{
-  font-size:22px;
-  font-weight:bold;
-  padding:14px;
-}
-
-/* ===== NAVBAR ===== */
-.navbar{
-  display:flex;
-  align-items:center;
-}
-
-/* HAMBURGER */
-.hamburger{
-  display:none;
-  background:none;
-  border:none;
-  cursor:pointer;
-  padding:14px;
-}
-.hamburger span{
-  font-size:32px;
-  color:white;
-}
-
-/* MENU */
-.nav-links{
-  list-style:none;
-  display:flex;
-}
-
-.nav-link{
-  position:relative;
-}
-
-.nav-link a{
-  display:flex;
-  align-items:center;
-  gap:4px;
-  padding:14px 16px;
-  text-decoration:none;
-  color:white;
-  font-weight:600;
-}
-
-/* DROPDOWN */
-.drop-down{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:white;
-  list-style:none;
-  min-width:160px;
-  box-shadow:0 6px 16px rgba(0,0,0,0.2);
-  border-radius:8px;
-  overflow:hidden;
-  z-index:100;
-}
-
-.drop-down li a{
-  display:block;
-  padding:10px 14px;
-  color:#1f2937;
-}
-
-.drop-down li a:hover{
-  background:#f1f5f9;
-}
-
-.services.open .drop-down{
-  display:block;
-}
-  
-.top-header{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.TV2{
-  color:rgb(41, 53, 28);
-  text-align-last: center;
-  font-size: xx-large;
-  font-weight: 700;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding-top: 20px;
-  padding-bottom: 50px;                
-}
-
-.dangbaitap {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  color: rgb(42, 42, 42);
-  align-items: center;
-  text-align: center;
-  font-size: large;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-a {
-  color: inherit;              /* Lấy màu của thẻ cha */
-  text-decoration: none;       /* Bỏ gạch chân */
-}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dropdownmenu.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+        <title>Nghe chính tả Lớp 2</title>
+        <style>
+            .Logo{
+                color: rgb(255, 255, 255);
+                font-size: xx-large;
+                font-weight: 700;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding-left: 20px;
+                padding-right: 30px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                background-color: rgb(114, 149, 77);
+                width: 300px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
             
-.box1{
-  background-color: rgb(241, 241, 241);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 2px;
-}
-.box2{
-  background-color: rgb(241, 241, 241);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 2px;
-}
-.box3{
-  background-color: rgb(241, 241, 241);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 2px;
-}
-.box4{
-  background-color: rgb(241, 241, 241);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 2px;
-}   
+            .TV2{
+                color:rgb(41, 53, 28);
+                text-align-last: center;
+                font-size: xx-large;
+                font-weight: 700;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                padding-top: 50px;
+                padding-bottom: 15px;                
+            }
 
-.box1:hover {
-  background: #bcc4b5;
-  border-radius: 6px;
-}
-
-.box2:hover {
-  background: #bcc4b5;
-  border-radius: 6px;
-}
-
-.box3:hover {
-  background: #bcc4b5;
-  border-radius: 6px;
-}
-
-.box4:hover {
-  background: #bcc4b5;
-  border-radius: 6px;
-}
-
-:root{--bg:white;--card:#fff;--accent:rgb(83, 113, 83);--success:#16a34a;--danger:#ef4444}
-body{font-family:system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:var(--bg);color:#0f172a}
-.wrap{max-width:2000px;margin:none;padding:20px}
-.card{background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06);padding:30px}
-h1{margin:0 0 8px;font-size:22px}
-p.lead{margin:0 0 18px;color:#334155}
-.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-button{background:var(--accent);color:white;border:0;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600}
-button.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent)}
-button.danger{background:var(--danger)}
-button:active{transform:translateY(1px)}
-.input-row{display:flex;gap:8px;align-items:center;margin:12px 0}
-input[type="text"]{flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef8;font-size:16px}
-.feedback{min-height:28px;margin-top:8px}
-.progress{display:flex;gap:8px;align-items:center;margin-top:12px}
-.score{margin-left:auto;font-weight:700}
-ul.word-list{display:none;gap:8px;flex-wrap:wrap;padding:0;margin:12px 0 0;list-style:none}
-ul.word-list li{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:14px}
-.sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
-@media (max-width:520px){.wrap{margin:16px;padding:12px}}
+            .dangbaitap{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                color: rgb(42, 42, 42);
+                align-items: center;
+                text-align: center;
+                font-size: large;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
             
-.targetunit{background-color: rgb(192, 121, 21);border-radius: 12px;color: rgb(255, 255, 255);padding:12px;}
-.units{background-color: rgb(239, 239, 239);border-radius: 12px;color: black;padding:12px;}   
-main{padding-top: 60px;}
-/* ===== MOBILE ===== */
-@media (max-width:768px){
-  .hamburger{
-    display:block;
-  }
+                .box1{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box2{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box3{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
+                .box4{
+                    background-color: rgb(241, 241, 241);
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 2px;
+                }
 
-  @media (max-width:768px){
-  .nav-links{
-    position: fixed;        /* QUAN TRỌNG */
-    top: 60px;              /* chiều cao header */
-    left: 0;
-    width: 100%;
-    background: white;
-    z-index: 2000;          /* CAO HƠN unit-scroll */
-  }
-}
-  
-  .nav-links{
-    display:none;
-    flex-direction:column;
-    background:white;
-    width:100%;
-    position:absolute;
-    top:60px;
-    left:0;
-  }
+            :root{--bg:white;--card:#fff;--accent:rgb(83, 113, 83);--success:#16a34a;--danger:#ef4444}
+            body{font-family:system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:var(--bg);color:#0f172a}
+            .wrap{max-width:1050px;margin:none;padding:20px;margin-left: 100px}
+            .card{background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06);padding:30px}
+            h1{margin:0 0 8px;font-size:22px}
+            p.lead{margin:0 0 18px;color:#334155}
+            .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+            button{background:var(--accent);color:white;border:0;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+            button.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+            button.danger{background:var(--danger)}
+            button:active{transform:translateY(1px)}
+            .input-row{display:flex;gap:8px;align-items:center;margin:12px 0}
+            input[type="text"]{flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef8;font-size:16px}
+            .feedback{min-height:28px;margin-top:8px}
+            .small{font-size:13px;color:#475569}
+            .progress{display:flex;gap:8px;align-items:center;margin-top:12px}
+            .pill{background:#eef2ff;color:rgb(83, 113, 83);padding:6px 10px;border-radius:999px;font-weight:600}
+            .score{margin-left:auto;font-weight:700}
+            ul.word-list{display:none;gap:8px;flex-wrap:wrap;padding:0;margin:12px 0 0;list-style:none}
+            ul.word-list li{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:14px}
+            .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+            @media (max-width:520px){.wrap{margin:16px;padding:12px}}
+            
+            .targetunit{background:rgb(83, 113, 83);color:white;align-self: center;padding:5px;cursor:pointer}
+            .units{background:white;color:rgb(83, 113, 83);border:1px solid rgb(83, 113, 83);align-self: center;padding:5px;cursor:pointer}
 
-  .nav-links.active{
-    display:flex;
-  }
+            .targetunit:hover {transform: scale(1.1);}
+            .units:hover {transform: scale(1.1);}
 
-  .nav-link a{
-    color:#1f2937;
-    border-bottom:1px solid #e5e7eb;
-  }
+        </style>
+    </head>
+    <body>
+        <!-- Phần đầu trang -->
+        <div style="
+            display: grid;
+            grid-template-columns: 310px 1fr;">
+            <div class="Logo">Ms.Nhung English</div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li class="nav-link">
+                        <a href="#">Trang chủ</a>
+                    </li>
 
-  .drop-down{
-    position:static;
-    box-shadow:none;
-    border-radius:0;
-  }
-}
+                    <li class="nav-link">
+                        <a href="#">Các khóa học</a>
+                    </li>
 
-/* ===== CONTENT ===== */
-main{
-  padding:none;
-}
+                    <li class="nav-link services">
+                        <a href="#">Từ Vựng
+                            <span class="material-icons dropdown-icon">
+                                arrow_drop_down
+                            </span>
+                        </a>
+                        <ul class="drop-down">
+                            <li> <a href="tuvungtienganhlop2.html" target="_self">Lớp 2</a></li>
+                            <li> <a href="tuvungtienganhlop3.html" target="_self">Lớp 3</a></li>
+                            <li> <a href="tuvungtienganhlop4.html" target="_self">Lớp 4</a></li>
+                            <li> <a href="tuvungtienganhlop5.html" target="_self">Lớp 5</a></li>
+                        </ul>
+                    </li>
 
-.card{
-  max-width:500px;
-  margin:auto;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.15);
-}
+                    <li class="nav-link">
+                        <a href="#">Luyện Nghe</a>
+                    </li>
 
-.card h1{
-  margin-bottom:10px;
-}
+                    <li class="nav-link">
+                        <a href="#">Luyện Đọc</a>
+                    </li>
 
-@media (max-width:768px){
-.dangbaitap{
-grid-template-columns: 1fr 1fr;
-gap:8px;
-font-size:1rem;
-}
+                    <li class="nav-link">
+                        <a href="#">Ngữ Pháp</a>
+                    </li>
+
+                </ul>    
+            </nav>
+        </div>
+        <!-- Phần đề mục -->
+        <div style="
+            display: grid;
+            grid-template-rows: 2fr 1fr;">  
+            <div class="TV2">TIẾNG ANH LỚP 2</div>
+            <div class="dangbaitap">
+                <div class="box1"><a href="tuvungtienganhlop2.html"target="_self">&#128210 Bộ từ vựng</a></div>
+                <div class="box2"><a href="Matchl2u1.html"target="_self">&#129513 Ghép từ</a></div>
+                <div class="box3"><a href="nghegotvl4.html" target="_self">&#127911 Nghe chính tả</a></div>
+                <div class="box4">&#128221 Ngữ pháp</div>
+            </div>
+        </div>
+        <!-- Phần chính -->
+        <div style="height: 30px;"></div> 
+        <div style="
+            display:grid;
+            grid-template-columns: 100px 1fr;">
+            <div style="
+                display: grid;
+                grid-template-columns: 100px;">
+                <p class="targetunit"><strong>Tổng hợp</strong></p>
+                <p class="units"><a href="nghegotvl2u1.html" target="_self"><strong>Unit 1</strong></a></p>
+                <p class="units"><a href="nghegotvl2u2.html" target="_self"><strong>Unit 2</strong></a></p>
+                <p class="units"><a href="nghegotvl2u3.html" target="_self"><strong>Unit 3</strong></a></p>
+                <p class="units"><a href="nghegotvl2u4.html" target="_self"><strong>Unit 4</strong></a></p>
+                <p class="units"><a href="nghegotvl2u5.html" target="_self"><strong>Unit 5</strong></a></p>
+                <p class="units"><a href="nghegotvl2u6.html" target="_self"><strong>Unit 6</strong></a></p>
+                <p class="units"><a href="nghegotvl2uculture.html" target="_self"><strong>Culture</strong></a></p>
+            </div>
         
-.dangbaitap div{
-padding:10px 0;
-border-radius:10px;
-}
-}
-@media (max-width:768px){
-body > div:nth-of-type(4){
-display:flex !important;
-overflow-x:auto;
-gap:8px;
-padding-bottom:10px;
-}
-        
-body > div:nth-of-type(4) button{
-min-width:110px;
-font-size:0.9rem;
-}
-}
-@media (max-width:768px){
-body > div:last-child{
-grid-template-columns:1fr !important;
-row-gap:10px;
-text-align:center;
-padding:16px;
-}
-}
+            <div class="wrap card" role="main">
+                <h1>LUYỆN NGHE CHÍNH TẢ TỪ VỰNG LỚP 2</h1>
+                <p class="lead">Nghe và gõ từ em nghe được vào ô trống phía dưới</p>
 
-@media (max-width:768px){
-  .unit-scroll{
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    position: relative;
-    z-index: 1;
-     margin-bottom:20px;
-  }
+                <div class="controls" role="region" aria-label="Điều khiển bài tập">
+                <button id="playBtn">▶ Phát</button>
+                <button id="repeatBtn" class="secondary">Xáo trộn từ</button> 
+                <button id="checkBtn">✔ Kiểm tra</button>
+                <button id="nextBtn" class="secondary">➡ Tiếp theo</button>
+                <button id="showBtn" class="secondary">👁 Hiện đáp án</button>
+                <button id="resetBtn" class="danger">⟲ Reset</button>
+                </div>
 
-  .unit-grid{
-    display:flex;
-    gap:8px;
-    min-width:max-content;
-   }
+                <div class="input-row">
+                <label for="answer" class="sr-only">Gõ từ em nghe được</label>
+                <input id="answer" type="text" autocomplete="off" placeholder="Gõ từ em nghe được rồi nhấn Kiểm tra" />
+                <div class="pill small" id="langLabel">Ngôn ngữ: en-US</div>
+                </div>
 
-  .unitbutton,
-  .chosenunitbutton{
-    min-width:90px;
-    flex-shrink:0;
-  }
-}
-  .controls{margin-top:16px;display:flex;gap:10px;}
+                <div class="feedback" id="feedback" aria-live="polite"></div>
 
-  button{flex:1;padding:12px;border-radius:10px;border:0;background:var(--accent);color:white;font-size:1rem;cursor:pointer;}
+                <div class="progress">
+                <div class="small">Từ: <span id="index">0</span>/<span id="total">0</span></div>
+                <div class="score">Điểm: <span id="score">0</span></div>
+                </div>
 
-  .site-footer{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: rgb(176, 185, 176);
-  padding: 20px 30px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 15px;
-  gap: 10px;
-}
-
-@media (max-width:768px){
-  .site-footer{
-    grid-template-columns: 1fr;
-    text-align:center;
-    padding: 15px 10px;
-    margin-top:50px;
-  }
-
-  .footer-item{
-    padding: 5px 0;
-    font-size: 16px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<div class="top-header">
-  <div class="Logo">MS.NHUNG ENGLISH</div>
-
-  <nav class="navbar">
-    <button class="hamburger" aria-label="Mở menu">
-      <span class="material-icons">menu</span>
-    </button>
-
-    <ul class="nav-links">
-      <li class="nav-link"><a href="#">Trang chủ</a></li>
-      <li class="nav-link"><a href="#">Khóa học</a></li>
-
-      <li class="nav-link services">
-        <a href="#">
-          Từ vựng
-          <span class="material-icons">arrow_drop_down</span>
-        </a>
-        <ul class="drop-down">
-          <li> <a href="tuvungtienganhlop2.html" target="_self">Lớp 2</a></li>
-          <li> <a href="tuvungtienganhlop3.html" target="_self">Lớp 3</a></li>
-          <li> <a href="tuvungtienganhlop4.html" target="_self">Lớp 4</a></li>
-          <li> <a href="tuvungtienganhlop5.html" target="_self">Lớp 5</a></li>
-        </ul>
-      </li>
-
-      <li class="nav-link"><a href="#">Luyện nghe</a></li>
-      <li class="nav-link"><a href="#">Ngữ pháp</a></li>
-    </ul>
-  </nav>
-</div>
-<main>
-<!-- CONTENT -->
-  <!-- Phần đề mục -->
-  <div style="display: grid;grid-template-rows: 1fr 1fr;">  
-    <div class="TV2">TIẾNG ANH LỚP 2</div>
-    <div class="dangbaitap">
-      <div class="box1"><a href="tuvungtienganhlop2.html"target="_self">&#128210 Bộ từ vựng</a></div>
-      <div class="box2"><a href="Matchl2u1.html"target="_self">&#129513 Ghép từ</a></div>
-      <div class="box3"><a href="nghegotvl4.html" target="_self">&#127911 Nghe chính tả</a></div>
-      <div class="box4">&#128221 Ngữ pháp</div>
-    </div>
-  </div>
-
-  <!-- Phần chính -->
-        <div style="height: 5px;"></div> 
-        <div class="unit-scroll"> 
-          <div class="unit-grid" style="
-              display:grid;
-              grid-template-columns: repeat(8,1fr);
-              column-gap: 5px; text-align: center;">
-              <p class="targetunit"><strong>Tổng hợp</strong></p>
-              <p class="units"><a href="nghegotvl2u1.html" target="_self"><strong>Unit 1</strong></a></p>
-              <p class="units"><a href="nghegotvl2u2.html" target="_self"><strong>Unit 2</strong></a></p>
-              <p class="units"><a href="nghegotvl2u3.html" target="_self"><strong>Unit 3</strong></a></p>
-              <p class="units"><a href="nghegotvl2u4.html" target="_self"><strong>Unit 4</strong></a></p>
-              <p class="units"><a href="nghegotvl2u5.html" target="_self"><strong>Unit 5</strong></a></p>
-              <p class="units"><a href="nghegotvl2u6.html" target="_self"><strong>Unit 6</strong></a></p>
-              <p class="units"><a href="nghegotvl2uculture.html" target="_self"><strong>Culture</strong></a></p>
-          </div>
-        </div> 
-        <div class="wrap card" role="main">
-            <h1>LUYỆN NGHE CHÍNH TẢ LỚP 2</h1>
-            <p class="lead">Gõ từ em nghe được vào ô trống phía dưới</p>
-
-            <div class="controls" role="region" aria-label="Điều khiển bài tập">
-            <button id="playBtn">▶ Phát</button>
-            <button id="repeatBtn" class="secondary">Trộn từ</button> 
-            <button id="checkBtn">✔ Kiểm tra</button>
-            </div>
-
-            <div class="input-row">
-            <label for="answer" class="sr-only">Gõ từ em nghe được</label>
-            <input id="answer" type="text" autocomplete="off" placeholder="Gõ từ em nghe được rồi nhấn Kiểm tra" />
-            </div>
-
-            <div class="feedback" id="feedback" aria-live="polite"></div>
-
-            <div class="controls" role="region" aria-label="Điều khiển bài tập">
-            <button id="nextBtn" class="secondary">Tiếp theo</button>
-            <button id="showBtn" class="secondary">Đáp án</button>
-            <button id="resetBtn" class="danger">⟲ Làm lại</button>
-            </div>
-
-            <div class="progress">
-            <div class="small">Từ: <span id="index">0</span>/<span id="total">0</span></div>
-            <div class="score">Điểm: <span id="score">0</span></div>
-            </div>
-
-            <hr />
-            <ul class="word-list" id="wordList"></ul>
+                <hr />
+                <ul class="word-list" id="wordList"></ul>
             </div>
 
             <script>
-              
                 // Cấu hình: danh sách từ. Mỗi phần tử có {text, audioUrl(optional), lang(optional)}
                 const words = [
                 {text: 'this is orange', lang: 'en-US', audioUrl: 'Auff2/05Orange.mp3'},
@@ -687,73 +449,37 @@ padding:16px;
                 window.EXERCISE = {words, playCurrent, checkAnswer, nextItem, resetAll};
 
                 // If you want to preload audio files set audioUrl in words array and they will play instead of TTS.
-
-                <!-- UNIQUE AUDIO FUNCTION -->
-                function playSound(id) {
-                const audio = document.getElementById(id);
-                if (audio) audio.play();
-                }
-
-                const hamburger = document.querySelector('.hamburger');
-                const navLinks = document.querySelector('.nav-links');
-                const serviceLink = document.querySelector('.services > a');
-                const serviceItem = document.querySelector('.services');
-                
-                hamburger.addEventListener('click', ()=>{
-                navLinks.classList.toggle('active');
-                hamburger.querySelector('span').textContent =
-                navLinks.classList.contains('active') ? 'close' : 'menu';
-                });
-                                
-                // dropdown "Từ vựng"
-                serviceLink.addEventListener('click',(e)=>{
-                  e.preventDefault();
-                  serviceItem.classList.toggle('open');
-                });
-                
-                // click ngoài thì đóng dropdown
-                document.addEventListener('click',(e)=>{
-                  if(!serviceItem.contains(e.target)){
-                    serviceItem.classList.remove('open');
-                  }
-                });
             </script>
-  </main>
-</body>
-<footer class="site-footer">
-  <div class="footer-item">
-    📱 <strong>Zalo:</strong> 0969 453 840 (Ms. Nhung)
-  </div>
+        </div>
+        
+        <div style="height: 50px;"></div>
+        
+    <!-- Phần chân trang -->
+    <div style="
+    display:grid;
+    grid-template-columns: 300px 350px 500px 250px;
+    background-color: rgb(176, 185, 176);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div>&#128241 Zalo: 0969 453 840 (Ms.Nhung)</div>
+        <div>&#128231 Email: thanhnhung846@gmail.com</div>
+        <div></div>
+        <div>Ho Chi Minh City, Viet Nam</div>
+    </div>
 
-  <div class="footer-item">
-    📧 <strong>Email:</strong> thanhnhung846@gmail.com
-  </div>
+    <!-- UNIQUE AUDIO FUNCTION -->
+    <script>
+        function playSound(id) {
+            const audio = document.getElementById(id);
+            if (audio) audio.play();
+        }
+    </script>
+    
+    </body>
 
-  <div class="footer-item">
-    📍 Ho Chi Minh City, Viet Nam
-  </div>
-</footer>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
