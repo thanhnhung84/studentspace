@@ -704,7 +704,9 @@ padding:16px;
                 const serviceItem = document.querySelector('.services');
                 
                 hamburger.addEventListener('click', ()=>{
-                  navLinks.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                hamburger.querySelector('span').textContent =
+                  navLinks.classList.contains('active') ? 'close' : 'menu';
                 });
                 
                 // dropdown "Từ vựng"
@@ -736,6 +738,7 @@ padding:16px;
   </div>
 </footer>
 </html>
+
 
 
 
