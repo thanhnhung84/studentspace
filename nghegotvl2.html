@@ -703,7 +703,21 @@ padding:16px;
                 const serviceLink = document.querySelector('.services > a');
                 const serviceItem = document.querySelector('.services');
                 
+                hamburger.addEventListener('click', ()=>{
+                navLinks.classList.toggle('active');
+                                
+                // dropdown "Từ vựng"
+                serviceLink.addEventListener('click',(e)=>{
+                  e.preventDefault();
+                  serviceItem.classList.toggle('open');
+                });
                 
+                // click ngoài thì đóng dropdown
+                document.addEventListener('click',(e)=>{
+                  if(!serviceItem.contains(e.target)){
+                    serviceItem.classList.remove('open');
+                  }
+                });
             </script>
   </main>
 </body>
@@ -721,6 +735,7 @@ padding:16px;
   </div>
 </footer>
 </html>
+
 
 
 
