@@ -95,7 +95,7 @@
                 width:180px;
             }
 
-            /* ===== MOBILE ===== */
+            /* ===== MOBILE: 1 NÚT / 1 DÒNG ===== */
             @media (max-width: 600px){
             
                 body{
@@ -104,52 +104,50 @@
             
                 .container{
                     padding:12px;
+                    border-radius:12px;
                 }
             
                 h1{
                     font-size:1.05rem;
                     line-height:1.3;
+                    text-align:center;
                 }
             
-                /* 2 nút / dòng */
+                .device{
+                    font-size:0.95rem;
+                    margin:10px 0 6px;
+                    text-align:center;
+                }
+            
                 .menu-grid{
                     display:grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap:8px;
-                    margin:14px 0 24px;
-                    justify-items:center;   /* 👈 canh giữa nút */
-                    max-width: fit-content;
+                    grid-template-columns: 1fr;   /* 👈 1 nút / dòng */
+                    gap:10px;
+                    width:100%;
+                    margin:12px 0 24px;
                 }
             
                 .butt{
-                    width:70%;              /* 👈 CHÌA KHÓA */
-                    max-width:140px;        /* 👈 GIỚI HẠN */
-                    font-size:0.9rem;       /* 👈 NHỎ LẠI */
-                    padding:10px 6px;
-                    min-height:42px;
-                    border-radius:12px;
+                    width:100%;
+                    max-width:100%;
+                    font-size:1rem;
+                    padding:12px 10px;
+                    min-height:48px;              /* chuẩn mobile */
+                    border-radius:14px;
                     box-sizing:border-box;
                 }
             
                 .butt a{
                     display:block;
                     white-space:nowrap;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
                 }
             
+                /* Tắt hover trên mobile */
                 .butt:hover{
                     transform:none;
                     box-shadow:none;
-                }
-            }
-            @media (max-width: 380px){
-                .menu-grid{
-                    grid-template-columns: 1fr;
-                }
-            
-                .butt{
-                    width:95%;
-                    max-width:260px;
-                    font-size:1rem;
                 }
             }
 
@@ -223,6 +221,7 @@
         </div>
     </body>    
 </html>
+
 
 
 
