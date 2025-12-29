@@ -97,42 +97,56 @@
 
             /* ===== MOBILE ===== */
             @media (max-width: 600px){
-
+            
                 body{
-                    padding:10px;
+                    padding:8px;
                 }
-
+            
                 .container{
-                    padding:18px;
-                    border-radius:12px;
+                    padding:14px;
                 }
-
+            
                 h1{
-                    font-size:1.1rem;
-                    line-height:1.4;
+                    font-size:1.05rem;
+                    line-height:1.35;
                 }
-
+            
+                /* Mobile lớn: 2 nút / hàng */
                 .menu-grid{
-                    grid-template-columns: 1fr;
-                    max-width:100%;
-                    margin:20px 0 32px;
-                    }
-                
+                    display:grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap:10px;
+                    margin:16px 0 28px;
+                }
+            
                 .device{
-                    font-size:1rem;
-                    margin-top:10px;
+                    font-size:0.95rem;
+                    margin-top:8px;
                 }
-
+            
                 .butt{
+                    width:100%;
                     max-width:100%;
-                    font-size:1.15rem;
-                    padding:16px 18px;
+                    font-size:1rem;          /* 👈 GIẢM */
+                    padding:12px 10px;       /* 👈 GIẢM */
+                    border-radius:14px;
+                    min-height:48px;         /* vẫn đạt chuẩn mobile */
                 }
-
-                /* Tắt zoom hover trên mobile */
+            
+                .butt a{
+                    display:block;
+                    white-space:nowrap;      /* tránh xuống dòng gây phình */
+                }
+            
                 .butt:hover{
                     transform:none;
                     box-shadow:none;
+                }
+            }
+
+            @media (max-width: 420px){
+                .menu-grid{
+                    grid-template-columns: 1fr;   /* 👈 1 nút / hàng */
                 }
             }
 
@@ -206,6 +220,7 @@
         </div>
     </body>    
 </html>
+
 
 
 
