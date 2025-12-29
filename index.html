@@ -99,47 +99,40 @@
             @media (max-width: 600px){
             
                 body{
-                    padding:8px;
+                    padding:6px;
                 }
             
                 .container{
-                    padding:14px;
+                    padding:12px;
                 }
             
                 h1{
                     font-size:1.05rem;
-                    line-height:1.35;
+                    line-height:1.3;
                 }
             
-                /* Mobile lớn: 2 nút / hàng */
+                /* 2 nút / dòng */
                 .menu-grid{
-                    width:100%;
-                    max-width:100%;
                     display:grid;
-                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    grid-template-columns: repeat(2, 1fr);
                     gap:8px;
-                    margin:16px auto 28px;
-                }
-            
-                .device{
-                    font-size:0.95rem;
-                    margin-top:8px;
+                    margin:14px 0 24px;
+                    justify-items:center;   /* 👈 canh giữa nút */
                 }
             
                 .butt{
-                    width:100%;
-                    max-width:100%;
-                    font-size:0.95rem;      /* 👈 GIẢM */
-                    padding:10px 8px;       /* 👈 GIẢM */
-                    min-height:44px;        /* vẫn OK cho mobile */
+                    width:90%;              /* 👈 CHÌA KHÓA */
+                    max-width:140px;        /* 👈 GIỚI HẠN */
+                    font-size:0.9rem;       /* 👈 NHỎ LẠI */
+                    padding:10px 6px;
+                    min-height:42px;
+                    border-radius:12px;
                     box-sizing:border-box;
                 }
             
                 .butt a{
                     display:block;
                     white-space:nowrap;
-                    overflow:hidden;
-                    text-overflow:ellipsis;
                 }
             
                 .butt:hover{
@@ -147,10 +140,15 @@
                     box-shadow:none;
                 }
             }
-
             @media (max-width: 380px){
                 .menu-grid{
                     grid-template-columns: 1fr;
+                }
+            
+                .butt{
+                    width:95%;
+                    max-width:260px;
+                    font-size:1rem;
                 }
             }
 
@@ -224,6 +222,7 @@
         </div>
     </body>    
 </html>
+
 
 
 
