@@ -77,17 +77,17 @@
             /* ===== GRID CHÍNH ===== */
             .menu-grid{
                 display:grid;
-                grid-template-columns: repeat(2, minmax(200px, 1fr));
-                gap:10px;
-                place-items:center;
-                margin:30px 200px 50px;
+                grid-template-columns: repeat(2, 260px); /* 👈 cố định đẹp */
+                justify-content:center;
+                gap:16px;
+                margin:30px auto 50px;
             }
 
             /* ===== BUTTON ===== */
             .butt{
-                width:100%;
-                max-width:260px;
-            }
+            width:100%;
+            min-height:52px;
+            max-width:260px;  /* desktop */
 
             /* ===== IMAGE ===== */
             .center-img{
@@ -113,19 +113,20 @@
                 }
 
                 .menu-grid{
-                    grid-template-columns: 1fr;   /* 👈 1 cột */
-                    margin: none;
-                }
-
+                    grid-template-columns: 1fr;
+                    max-width:100%;
+                    margin:20px 0 32px;
+                    }
+                
                 .device{
                     font-size:1rem;
                     margin-top:10px;
                 }
 
                 .butt{
-                    font-size:1rem;
-                    padding:14px;
                     max-width:100%;
+                    font-size:1.15rem;
+                    padding:16px 18px;
                 }
 
                 /* Tắt zoom hover trên mobile */
@@ -151,9 +152,12 @@
                     font-size:1.25rem;
                 }
 
-                .menu-grid{
-                    grid-template-columns: repeat(2, 1fr);  /* 👈 2 cột mềm */
-                    gap:18px;
+                @media (max-width:1024px){
+                    .menu-grid{
+                        grid-template-columns: repeat(2, 1fr);
+                        max-width:600px;
+                        margin:24px auto 40px;
+                    }
                 }
 
                 .device{
@@ -202,6 +206,7 @@
         </div>
     </body>    
 </html>
+
 
 
 
