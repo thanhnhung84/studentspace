@@ -73,6 +73,108 @@
             }
 
             .device{text-align: center;font-weight: bold;font-size: 1.1rem;}
+
+            /* ===== GRID CHÍNH ===== */
+            .menu-grid{
+                display:grid;
+                grid-template-columns: repeat(2, minmax(140px, 1fr));
+                gap:16px;
+                place-items:center;
+                margin:30px 0 50px;
+            }
+
+            /* ===== BUTTON ===== */
+            .butt{
+                width:100%;
+                max-width:260px;
+            }
+
+            /* ===== IMAGE ===== */
+            .center-img{
+                max-width:100%;
+                width:180px;
+            }
+
+            /* ===== MOBILE ===== */
+            @media (max-width: 600px){
+
+                body{
+                    padding:10px;
+                }
+
+                .container{
+                    padding:18px;
+                    border-radius:12px;
+                }
+
+                h1{
+                    font-size:1.1rem;
+                    line-height:1.4;
+                }
+
+                .menu-grid{
+                    grid-template-columns: 1fr;   /* 👈 1 cột */
+                }
+
+                .device{
+                    font-size:1rem;
+                    margin-top:10px;
+                }
+
+                .butt{
+                    font-size:1rem;
+                    padding:14px;
+                    max-width:100%;
+                }
+
+                /* Tắt zoom hover trên mobile */
+                .butt:hover{
+                    transform:none;
+                    box-shadow:none;
+                }
+            }
+
+            /* ===== TABLET (iPad) ===== */
+            @media (min-width: 601px) and (max-width: 1024px){
+
+                body{
+                    padding:14px;
+                }
+
+                .container{
+                    padding:24px;
+                    border-radius:14px;
+                }
+
+                h1{
+                    font-size:1.25rem;
+                }
+
+                .menu-grid{
+                    grid-template-columns: repeat(2, 1fr);  /* 👈 2 cột mềm */
+                    gap:18px;
+                }
+
+                .device{
+                    font-size:1.05rem;
+                }
+
+                .butt{
+                    font-size:1.05rem;
+                    padding:16px;
+                    max-width:100%;
+                }
+
+                /* Hover nhẹ cho tablet */
+                .butt:hover{
+                    transform: scale(1.03);
+                    box-shadow:0 4px 10px rgba(0,0,0,0.18);
+                }
+
+                .center-img{
+                    width:190px;
+                }
+            }
         </style>
 
     </head>
@@ -82,25 +184,19 @@
         <p class="welcome">Chào mừng em đến với góc luyện tập Tiếng Anh dành cho học viên của Ms.Nhung</p>
         <img src="welcome.png" alt="Welcome" class="center-img">
         <p style="text-align: center;">Chọn lớp và thiết bị em đang dùng</p>
-        <div style="display:grid;
-            grid-template-columns: repeat(2,300px);column-gap: 20px;place-content: center;margin-top: 30px;margin-bottom: 50px;row-gap: 10px;">
+        <div class="menu-grid">
             <div class="device">
-                MÁY TÍNH/ LAPTOP<br>
-                (Khuyên dùng)
+                MÁY TÍNH/ LAPTOP
             </div>
-            <div class="device">ĐIỆN THOẠI<br>(đang cập nhật)</div>
-            
             <button class="butt"><a href="tuvungtienganhlop2.html" target="_self">💻 LỚP 2</a></button>
-            <button class="butt"><a href="tuvungtienganhlop2.html" target="_self">📱 LỚP 2</a></button>
-
             <button class="butt"><a href="tuvungtienganhlop3.html" target="_self">💻 LỚP 3</a></button>
-            <button class="butt"><a href="tuvungtienganhlop3.html" target="_self">📱 LỚP 3</a></button>
-
             <button class="butt"><a href="tuvungtienganhlop4.html" target="_self">💻 LỚP 4</a></button>
-            <button class="butt"><a href="tuvungtienganhlop4.html" target="_self">📱 LỚP 4</a></button>
-
             <button class="butt"><a href="tuvungtienganhlop5.html" target="_self">💻 LỚP 5</a></button>
-            <button class="butt"><a href="tuvungtienganhlop5.html" target="_self">📱 LỚP 5</a></button>
+            <div class="device">ĐIỆN THOẠI/ MÁY TÍNH BẢNG</div>
+            <button class="butt"><a href="mtuvungtienganhlop2.html" target="_self">📱 LỚP 2</a></button>
+            <button class="butt"><a href="mtuvungtienganhlop3.html" target="_self">📱 LỚP 3</a></button>
+            <button class="butt"><a href="mtuvungtienganhlop4.html" target="_self">📱 LỚP 4</a></button>
+            <button class="butt"><a href="mtuvungtienganhlop5.html" target="_self">📱 LỚP 5</a></button>
         </div>
         </div>
     </body>    
