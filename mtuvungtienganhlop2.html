@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dropdownmenu.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+        <title>Từ vựng Tiếng Anh Lớp 2</title>
+        <style>
+            /* RESET */
+            *{
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+            font-family:Arial, sans-serif;
+            }
+
+            /* ===== HEADER ===== */
+            .top-header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            background:#72954d;
+            color:white;
+            padding:0 10px;
+            }
+
+            /* LOGO */
+            .Logo{
+            font-size:22px;
+            font-weight:bold;
+            padding:14px;
+            }
+
+            /* ===== NAVBAR ===== */
+            .navbar{
+            display:flex;
+            align-items:center;
+            }
+
+            /* HAMBURGER */
+            .hamburger{
+            display:none;
+            background:none;
+            border:none;
+            cursor:pointer;
+            padding:14px;
+            }
+            .hamburger span{
+            font-size:32px;
+            color:white;
+            }
+
+            /* MENU */
+            .nav-links{
+            list-style:none;
+            display:flex;
+            }
+
+            .nav-link{
+            position:relative;
+            }
+
+            .nav-link a{
+            display:flex;
+            align-items:center;
+            gap:4px;
+            padding:14px 16px;
+            text-decoration:none;
+            color:white;
+            font-weight:600;
+            }
+
+            /* DROPDOWN */
+            .drop-down{
+            display:none;
+            position:absolute;
+            top:100%;
+            left:0;
+            background:white;
+            list-style:none;
+            min-width:160px;
+            box-shadow:0 6px 16px rgba(0,0,0,0.2);
+            border-radius:8px;
+            overflow:hidden;
+            z-index:100;
+            }
+
+            .drop-down li a{
+            display:block;
+            padding:10px 14px;
+            color:#1f2937;
+            }
+
+            .drop-down li a:hover{
+            background:#f1f5f9;
+            }
+
+            .services.open .drop-down{
+            display:block;
+            }
+            
+            .top-header{
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            }
+            
+            .TV2{
+            color:rgb(41, 53, 28);
+            text-align-last: center;
+            font-size: xx-large;
+            font-weight: 700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 20px;
+            padding-bottom: 50px;                
+            }
+
+            .dangbaitap {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            color: rgb(42, 42, 42);
+            align-items: center;
+            text-align: center;
+            font-size: large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            a {
+            color: inherit;              /* Lấy màu của thẻ cha */
+            text-decoration: none;       /* Bỏ gạch chân */
+            }
+                        
+            .box1{
+            background-color: rgb(241, 241, 241);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: 2px;
+            }
+            .box2{
+            background-color: rgb(241, 241, 241);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: 2px;
+            }
+            .box3{
+            background-color: rgb(241, 241, 241);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: 2px;
+            }
+            .box4{
+            background-color: rgb(241, 241, 241);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: 2px;
+            }   
+
+            .box1:hover {
+            background: #bcc4b5;
+            border-radius: 6px;
+            }
+
+            .box2:hover {
+            background: #bcc4b5;
+            border-radius: 6px;
+            }
+
+            .box3:hover {
+            background: #bcc4b5;
+            border-radius: 6px;
+            }
+
+            .box4:hover {
+            background: #bcc4b5;
+            border-radius: 6px;
+            }
+
+            .vocab-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-auto-rows: auto;
+                gap: 8px;
+                justify-content: center;
+                margin: 40px auto;
+                padding: 12px;
+            }
+            .vocab-grid > div {
+                margin-bottom: 4px;
+            }
+                
+            /* IMAGE WRAPPER */
+            .image-box {
+                width: 100%;
+                max-width: 160px;   /* vừa 1 cột mobile */
+                aspect-ratio: 4 / 3;
+                background: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+    
+            .image-box img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+    
+            /* BUTTONS */
+            .sound-btn {
+                background-color: rgba(51, 133, 51, 0.8);
+                color: white;
+                font-weight: bold;
+                max-width: 160px;
+                font-size: 14px;
+                padding: 8px 0;
+                width: 100%;
+                padding: 8px 0;
+                cursor: pointer;
+                border: none;
+                border-radius: 6px;
+                transition: transform 0.2s ease;
+                justify-self: center;
+            }
+    
+            .sound-btn:hover {
+                transform: scale(1.1);
+            }
+
+            :root{--bg:white;--card:#fff;--accent:rgb(83, 113, 83);--success:#16a34a;--danger:#ef4444}
+            body{font-family:system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:var(--bg);color:#0f172a}
+            .wrap{max-width:2000px;margin:none;padding:20px}
+            .card{background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06);padding:30px}
+            h1{margin:0 0 8px;font-size:22px}
+            p.lead{margin:0 0 18px;color:#334155}
+            .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+            button{background:var(--accent);color:white;border:0;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+            button.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+            button.danger{background:var(--danger)}
+            button:active{transform:translateY(1px)}
+            .input-row{display:flex;gap:8px;align-items:center;margin:12px 0}
+            input[type="text"]{flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef8;font-size:16px}
+            .feedback{min-height:28px;margin-top:8px}
+            .progress{display:flex;gap:8px;align-items:center;margin-top:12px}
+            .score{margin-left:auto;font-weight:700}
+            ul.word-list{display:none;gap:8px;flex-wrap:wrap;padding:0;margin:12px 0 0;list-style:none}
+            ul.word-list li{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:14px}
+            .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+            @media (max-width:520px){.wrap{margin:16px;padding:12px}}
+
+            /* ===== MOBILE ===== */
+            @media (max-width:768px){
+            .hamburger{
+                display:block;
+            }
+
+            @media (max-width:768px){
+            .nav-links{
+                position: fixed;        /* QUAN TRỌNG */
+                top: 60px;              /* chiều cao header */
+                left: 0;
+                width: 100%;
+                background: white;
+                z-index: 2000;          /* CAO HƠN unit-scroll */
+            }
+            }
+            
+            .nav-links{
+                display:none;
+                flex-direction:column;
+                background:white;
+                width:100%;
+                position:absolute;
+                top:60px;
+                left:0;
+            }
+
+            .nav-links.active{
+                display:flex;
+            }
+
+            .nav-link a{
+                color:#1f2937;
+                border-bottom:1px solid #e5e7eb;
+            }
+
+            .drop-down{
+                position:static;
+                box-shadow:none;
+                border-radius:0;
+            }
+            }
+
+            /* ===== CONTENT ===== */
+            main{
+            padding:none;
+            }
+
+            @media (max-width:768px){
+            .dangbaitap{
+            grid-template-columns: 1fr 1fr;
+            gap:8px;
+            font-size:1rem;
+            }
+                    
+            .dangbaitap div{
+            padding:10px 0;
+            border-radius:10px;
+            }
+            }
+            @media (max-width:768px){
+            body > div:nth-of-type(4){
+            display:flex !important;
+            overflow-x:auto;
+            gap:8px;
+            padding-bottom:10px;
+            }
+                    
+            body > div:nth-of-type(4) button{
+            min-width:110px;
+            font-size:0.9rem;
+            }
+            }
+            @media (max-width:768px){
+            body > div:last-child{
+            grid-template-columns:1fr !important;
+            row-gap:10px;
+            text-align:center;
+            padding:16px;
+            }
+            }
+
+            .controls{margin-top:16px;display:flex;gap:10px;}
+
+            button{flex:1;padding:12px;border-radius:10px;border:0;background:var(--accent);color:white;font-size:1rem;cursor:pointer;}
+
+            @media (max-width: 480px) {
+            .image-box {
+                max-width: 140px;
+            }
+        
+            .sound-btn {
+                max-width: 140px;
+                font-size: 13px;
+                }
+            }
+
+            .site-footer{
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            background-color: rgb(176, 185, 176);
+            padding: 20px 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 15px;
+            gap: 10px;
+            }
+
+            @media (max-width:768px){
+            .site-footer{
+                grid-template-columns: 1fr;
+                text-align:center;
+                padding: 15px 10px;
+                margin-top:50px;
+            }
+
+            .footer-item{
+                padding: 5px 0;
+                font-size: 16px;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <div class="top-header">
+        <div class="Logo">MS.NHUNG ENGLISH</div>
+
+        <nav class="navbar">
+            <button class="hamburger" aria-label="Mở menu">
+            <span class="material-icons">menu</span>
+            </button>
+
+            <ul class="nav-links">
+            <li class="nav-link"><a href="index.html" target="_self">Trang chủ</a></li>
+            <li class="nav-link"><a href="#">Khóa học</a></li>
+
+            <li class="nav-link services">
+                <a href="#">
+                Từ vựng
+                <span class="material-icons">arrow_drop_down</span>
+                </a>
+                <ul class="drop-down">
+                <li> <a href="mtuvungtienganhlop2.html" target="_self">Lớp 2</a></li>
+                <li> <a href="mtuvungtienganhlop3.html" target="_self">Lớp 3</a></li>
+                <li> <a href="mtuvungtienganhlop4.html" target="_self">Lớp 4</a></li>
+                <li> <a href="mtuvungtienganhlop5.html" target="_self">Lớp 5</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-link"><a href="#">Luyện nghe</a></li>
+            <li class="nav-link"><a href="#">Ngữ pháp</a></li>
+            </ul>
+        </nav>
+        </div>
+        <main>
+        <!-- CONTENT -->
+        <!-- Phần đề mục -->
+        <div style="display: grid;grid-template-rows: 1fr 1fr;">  
+            <div class="TV2">TIẾNG ANH LỚP 2</div>
+            <div class="dangbaitap">
+            <div class="box1"><a href="mtuvungtienganhlop2.html"target="_self">&#128210 Bộ từ vựng</a></div>
+            <div class="box2"><a href="mMatchl2u1.html"target="_self">&#129513 Ghép từ</a></div>
+            <div class="box3"><a href="mnghegotvl2.html" target="_self">&#127911 Nghe chính tả</a></div>
+            <div class="box4">&#128221 Ngữ pháp</div>
+            </div>
+        </div>
+        <div style="height: 50px;"></div>
+        
+            <!-- VOCAB GRID -->
+            <div class="vocab-grid">
+
+                <!-- AUTO-GENERATED 80 ITEMS: image-box + button + audio -->
+                <!-- Format: image Flashcards/IM01.png ... IM80.png -->
+
+                <!-- Items 01 - 80 -->
+
+                <!-- 1 -->
+                <div class="image-box"><img src="Flashcards/IM01.png" alt="Rosy"></div>
+                <div class="image-box"><img src="Flashcards/IM02.png" alt="Tim"></div>
+                
+                <button class="sound-btn" onclick="playSound('rosy')">Rosy</button>
+                <audio id="rosy" src="Auff2/01Rosy.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('tim')">Tim</button>
+                <audio id="tim" src="Auff2/02Tim.mp3"></audio>
+
+                <!-- 2 -->
+                <div class="image-box"><img src="Flashcards/IM03.png" alt="Billy"></div>
+                <div class="image-box"><img src="Flashcards/IM04.png" alt="MrsJones"></div>
+                          
+                <button class="sound-btn" onclick="playSound('billy')">Billy</button>
+                <audio id="billy" src="Auff2/03Billy.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('mrsjones')">Mrs. Jones</button>
+                <audio id="mrsjones" src="Auff2/04MsJones.mp3"></audio>
+
+                <!-- 3 -->
+                <div class="image-box"><img src="Flashcards/IM05.png" alt="orange"></div>
+                <div class="image-box"><img src="Flashcards/IM06.png" alt="pink"></div>
+                
+                <button class="sound-btn" onclick="playSound('orange')">orange</button>
+                <audio id="orange" src="Auff2/05Orange.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('pink')">pink</button>
+                <audio id="pink" src="Auff2/06Pink.mp3"></audio>
+
+                <!-- 4 -->
+                <div class="image-box"><img src="Flashcards/IM07.png" alt="brown"></div>
+                <div class="image-box"><img src="Flashcards/IM08.png" alt="purple"></div>
+                
+                <button class="sound-btn" onclick="playSound('brown')">brown</button>
+                <audio id="brown" src="Auff2/07Brown.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('purple')">purple</button>
+                <audio id="purple" src="Auff2/08Purple.mp3"></audio>
+                
+                <!-- 5 -->
+                <div class="image-box"><img src="Flashcards/IM09.png" alt="mom"></div>
+                <div class="image-box"><img src="Flashcards/IM10.png" alt="dad"></div>
+                
+                <button class="sound-btn" onclick="playSound('mom')">mom</button>
+                <audio id="mom" src="Auff2/09Mom.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('dad')">dad</button>
+                <audio id="dad" src="Auff2/10Dad.mp3"></audio>
+
+                <!-- 6 -->
+                <div class="image-box"><img src="Flashcards/IM11.png" alt="brother"></div>
+                <div class="image-box"><img src="Flashcards/IM12.png" alt="sister"></div>
+              
+                <button class="sound-btn" onclick="playSound('brother')">brother</button>
+                <audio id="brother" src="Auff2/11Brother.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('sister')">sister</button>
+                <audio id="sister" src="Auff2/12Sister.mp3"></audio>
+
+                <!-- 7 -->
+                <div class="image-box"><img src="Flashcards/IM13.png" alt="grandpa"></div>
+                <div class="image-box"><img src="Flashcards/IM14.png" alt="grandma"></div>
+
+                <button class="sound-btn" onclick="playSound('grandpa')">grandpa</button>
+                <audio id="grandpa" src="Auff2/13Grandpa.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('grandma')">grandma</button>
+                <audio id="grandma" src="Auff2/14Grandma.mp3"></audio>
+                
+                <!-- 8 -->
+                <div class="image-box"><img src="Flashcards/IM15.png" alt="happy"></div>
+                <div class="image-box"><img src="Flashcards/IM16.png" alt="sad"></div>
+                  
+                <button class="sound-btn" onclick="playSound('happy')">happy</button>
+                <audio id="happy" src="Auff2/15Happy.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('sad')">sad</button>
+                <audio id="sad" src="Auff2/16Sad.mp3"></audio>
+
+                <!-- 9 -->
+                <div class="image-box"><img src="Flashcards/IM17.png" alt="hungry"></div>
+                <div class="image-box"><img src="Flashcards/IM18.png" alt="thirsty"></div>
+                
+                <button class="sound-btn" onclick="playSound('hungry')">hungry</button>
+                <audio id="hungry" src="Auff2/17Hungry.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('thirsty')">thirsty</button>
+                <audio id="thirsty" src="Auff2/18Thirsty.mp3"></audio>
+                
+                <!-- 10 -->
+                <div class="image-box"><img src="Flashcards/IM19.png" alt="hot"></div>
+                <div class="image-box"><img src="Flashcards/IM20.png" alt="cold"></div>
+                             
+                <button class="sound-btn" onclick="playSound('hot')">hot</button>
+                <audio id="hot" src="Auff2/19Hot.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('cold')">cold</button>
+                <audio id="cold" src="Auff2/20Cold.mp3"></audio>
+                
+                <!-- 11 -->
+                <div class="image-box"><img src="Flashcards/IM21.png" alt="dress"></div>
+                <div class="image-box"><img src="Flashcards/IM22.png" alt="socks"></div>
+                
+                <button class="sound-btn" onclick="playSound('dress')">dress</button>
+                <audio id="dress" src="Auff2/21Dress.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('socks')">socks</button>
+                <audio id="socks" src="Auff2/22Socks.mp3"></audio>
+                
+                <!-- 12 -->
+                <div class="image-box"><img src="Flashcards/IM23.png" alt="tshirt"></div>
+                <div class="image-box"><img src="Flashcards/IM24.png" alt="pants"></div>
+
+                <button class="sound-btn" onclick="playSound('tshirt')">T-shirt</button>
+                <audio id="tshirt" src="Auff2/23Tshirt.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('pants')">pants</button>
+                <audio id="pants" src="Auff2/24Pants.mp3"></audio>
+
+                <!-- 13 -->
+                <div class="image-box"><img src="Flashcards/IM25.png" alt="shorts"></div>
+                <div class="image-box"><img src="Flashcards/IM26.png" alt="shoes"></div>
+                
+                <button class="sound-btn" onclick="playSound('shorts')">shorts</button>
+                <audio id="shorts" src="Auff2/25Shorts.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('shoes')">shoes</button>
+                <audio id="shoes" src="Auff2/26Shoes.mp3"></audio>
+                
+                <!-- 14 -->
+                <div class="image-box"><img src="Flashcards/IM27.png" alt="plus"></div>
+                <div class="image-box"><img src="Flashcards/IM28.png" alt="equals"></div>
+                             
+                <button class="sound-btn" onclick="playSound('plus')">plus</button>
+                <audio id="plus" src="Auff2/27Plus.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('equals')">equals</button>
+                <audio id="equals" src="Auff2/28Equals.mp3"></audio>
+                
+                <!-- 15 -->
+                <div class="image-box"><img src="Flashcards/IM29.png" alt="additionproblem"></div>
+                <div class="image-box"><img src="Flashcards/IM30.png" alt="bus"></div>
+                
+                <button class="sound-btn" onclick="playSound('additionproblem')">Addition problem</button>
+                <audio id="additionproblem" src="Auff2/29Additionproblem.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('bus')">bus</button>
+                <audio id="bus" src="Auff2/30Bus.mp3"></audio>
+
+                <!-- 16 -->                
+                <div class="image-box"><img src="Flashcards/IM31.png" alt="bike"></div>
+                <div class="image-box"><img src="Flashcards/IM32.png" alt="boat"></div>
+
+                <button class="sound-btn" onclick="playSound('bike')">bike</button>
+                <audio id="bike" src="Auff2/31Bike.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('boat')">boat</button>
+                <audio id="boat" src="Auff2/32Boat.mp3"></audio>
+
+                <!-- 17 -->
+                <div class="image-box"><img src="Flashcards/IM33.png" alt="car"></div>
+                <div class="image-box"><img src="Flashcards/IM34.png" alt="truck"></div>
+                
+                <button class="sound-btn" onclick="playSound('car')">car</button>
+                <audio id="car" src="Auff2/33Car.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('truck')">truck</button>
+                <audio id="truck" src="Auff2/34Truck.mp3"></audio>
+
+                <!-- 18 -->
+                <div class="image-box"><img src="Flashcards/IM35.png" alt="motorbike"></div>
+                <div class="image-box"><img src="Flashcards/IM36.png" alt="seesaw"></div>
+
+                <button class="sound-btn" onclick="playSound('motorbike')">motorbike</button>
+                <audio id="motorbike" src="Auff2/35Motorbike.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('seesaw')">seesaw</button>
+                <audio id="seesaw" src="Auff2/36Seesaw.mp3"></audio>
+
+                <!-- 19 -->
+                <div class="image-box"><img src="Flashcards/IM37.png" alt="slide"></div>
+                <div class="image-box"><img src="Flashcards/IM38.png" alt="goal"></div>
+                
+                <button class="sound-btn" onclick="playSound('slide')">slide</button>
+                <audio id="slide" src="Auff2/37Slide.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('goal')">goal</button>
+                <audio id="goal" src="Auff2/38Goal.mp3"></audio>
+
+                <!-- 20 -->
+                <div class="image-box"><img src="Flashcards/IM39.png" alt="tree"></div>
+                <div class="image-box"><img src="Flashcards/IM40.png" alt="pool"></div>
+
+                <button class="sound-btn" onclick="playSound('tree')">tree</button>
+                <audio id="tree" src="Auff2/39Tree.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('pool')">pool</button>
+                <audio id="pool" src="Auff2/40Pool.mp3"></audio>
+
+                <!-- 21 -->
+                <div class="image-box"><img src="Flashcards/IM41.png" alt="frisbee"></div>
+                <div class="image-box"><img src="Flashcards/IM42.png" alt="kitchen"></div>
+                
+                <button class="sound-btn" onclick="playSound('frisbee')">frisbee</button>
+                <audio id="frisbee" src="Auff2/41Frisbee.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('kitchen')">kitchen</button>
+                <audio id="kitchen" src="Auff2/42Kitchen.mp3"></audio>
+
+                <!-- 22 -->
+                <div class="image-box"><img src="Flashcards/IM43.png" alt="livingroom"></div>
+                <div class="image-box"><img src="Flashcards/IM44.png" alt="diningroom"></div>             
+                
+                <button class="sound-btn" onclick="playSound('livingroom')">living room</button>
+                <audio id="livingroom" src="Auff2/43Livingroom.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('diningroom')">dining room</button>
+                <audio id="diningroom" src="Auff2/44Diningroom.mp3"></audio>
+              
+                <!-- 23 -->
+                <div class="image-box"><img src="Flashcards/IM45.png" alt="bedroom"></div>
+                <div class="image-box"><img src="Flashcards/IM46.png" alt="bathroom"></div>
+                
+                <button class="sound-btn" onclick="playSound('bedroom')">bedroom</button>
+                <audio id="bedroom" src="Auff2/45Bedroom.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('bathroom')">bathroom</button>
+                <audio id="bathroom" src="Auff2/46Bathroom.mp3"></audio>
+
+                <!-- 24 -->
+                <div class="image-box"><img src="Flashcards/IM47.png" alt="computer"></div>
+                <div class="image-box"><img src="Flashcards/IM48.png" alt="tv"></div>
+                
+                <button class="sound-btn" onclick="playSound('computer')">computer</button>
+                <audio id="computer" src="Auff2/47Computer.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('tv')">TV</button>
+                <audio id="tv" src="Auff2/48TV.mp3"></audio>
+
+                <!-- 25 -->
+                <div class="image-box"><img src="Flashcards/IM49.png" alt="phone"></div>
+                <div class="image-box"><img src="Flashcards/IM50.png" alt="camera"></div>
+                
+                <button class="sound-btn" onclick="playSound('phone')">phone</button>
+                <audio id="phone" src="Auff2/49Phone.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('camera')">camera</button>
+                <audio id="camera" src="Auff2/50Camera.mp3"></audio>
+
+                <!-- 26 -->
+                <div class="image-box"><img src="Flashcards/IM51.png" alt="vietnam"></div>
+                <div class="image-box"><img src="Flashcards/IM52.png" alt="korea"></div>             
+                
+                <button class="sound-btn" onclick="playSound('vietnam')">Viet Nam</button>
+                <audio id="vietnam" src="Auff2/51Vietnam.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('korea')">Korea</button>
+                <audio id="korea" src="Auff2/52Korea.mp3"></audio>
+            
+                <!-- 27 -->
+                <div class="image-box"><img src="Flashcards/IM53.png" alt="theusa"></div>
+                <div class="image-box"><img src="Flashcards/IM54.png" alt="thailand"></div>
+                
+                <button class="sound-btn" onclick="playSound('theusa')">The U.S.A</button>
+                <audio id="theusa" src="Auff2/53TheUSA.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('thailand')">Thailand</button>
+                <audio id="thailand" src="Auff2/54Thailand.mp3"></audio>
+
+                <!-- 28 -->                
+                <div class="image-box"><img src="Flashcards/IM55.png" alt="switzerland"></div>
+                <div class="image-box"><img src="Flashcards/IM56.png" alt="dog"></div>             
+                
+                <button class="sound-btn" onclick="playSound('switzerland')">Switzerland</button>
+                <audio id="switzerland" src="Auff2/55Switzerland.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('dog')">dog</button>
+                <audio id="dog" src="Auff2/56Dog.mp3"></audio>
+             
+                <!-- 29 -->
+                <div class="image-box"><img src="Flashcards/IM57.png" alt="cat"></div>
+                <div class="image-box"><img src="Flashcards/IM58.png" alt="hamster"></div>
+                
+                <button class="sound-btn" onclick="playSound('cat')">cat</button>
+                <audio id="cat" src="Auff2/57Cat.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('hamster')">hamster</button>
+                <audio id="hamster" src="Auff2/58Hamster.mp3"></audio>
+
+                <!-- 30 -->
+                <div class="image-box"><img src="Flashcards/IM59.png" alt="fish"></div>
+                <div class="image-box"><img src="Flashcards/IM60.png" alt="card"></div>
+                 
+                <button class="sound-btn" onclick="playSound('fish')">fish</button>
+                <audio id="fish" src="Auff2/59Fish.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('card')">card</button>
+                <audio id="card" src="Auff2/60Card.mp3"></audio>
+             
+                <!-- 31 -->
+                <div class="image-box"><img src="Flashcards/IM61.png" alt="banhchung"></div>
+                <div class="image-box"><img src="Flashcards/IM62.png" alt="luckymoney"></div>
+                
+                <button class="sound-btn" onclick="playSound('banhchung')">Banh chung</button>
+                <audio id="banhchung" src="Auff2/61Banhchung.mp3"></audio>                
+                
+                <button class="sound-btn" onclick="playSound('luckymoney')">Lucky money</button>
+                <audio id="luckymoney" src="Auff2/62Luckymoney.mp3"></audio>
+
+                <!-- 32 -->
+                <div class="image-box"><img src="Flashcards/IM63.png" alt="flowers"></div>
+                <div class="image-box"><img src="Flashcards/IM64.png" alt="baseball"></div>                
+            
+                <button class="sound-btn" onclick="playSound('flowers')">flowers</button>
+                <audio id="flowers" src="Auff2/63Flowers.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('baseball')">baseball</button>
+                <audio id="baseball" src="Auff2/64Baseball.mp3"></audio>
+       
+                <!-- 33 -->
+                <div class="image-box"><img src="Flashcards/IM65.png" alt="basketball"></div>
+                <div class="image-box"><img src="Flashcards/IM66.png" alt="hockey"></div>
+                
+                <button class="sound-btn" onclick="playSound('basketball')">basketball</button>
+                <audio id="basketball" src="Auff2/65Basketball.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('hockey')">hockey</button>
+                <audio id="hockey" src="Auff2/66Hockey.mp3"></audio>
+
+                <!-- 34 -->
+                <div class="image-box"><img src="Flashcards/IM67.png" alt="badminton"></div>
+                <div class="image-box"><img src="Flashcards/IM68.png" alt="tohe"></div>
+                
+                <button class="sound-btn" onclick="playSound('badminton')">badminton</button>
+                <audio id="badminton" src="Auff2/67Badminton.mp3"></audio>
+
+                <button class="sound-btn">To he</button>
+            
+                <!-- 35 -->
+                <div class="image-box"><img src="Flashcards/IM69.png" alt="kite"></div>
+                <div class="image-box"><img src="Flashcards/IM70.png" alt="boardgame"></div>
+                
+                <button class="sound-btn" onclick="playSound('kite')">kite</button>
+                <audio id="kite" src="Auff2/69Kite.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('boardgame')">board game</button>
+                <audio id="boardgame" src="Auff2/70Boardgame.mp3"></audio>
+
+                <!-- 36 -->
+                <div class="image-box"><img src="Flashcards/IM71.png" alt="doll"></div>
+                <div class="image-box"><img src="Flashcards/IM72.png" alt="mountains"></div>
+                            
+                <button class="sound-btn" onclick="playSound('doll')">doll</button>
+                <audio id="doll" src="Auff2/71Doll.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('mountains')">mountains</button>
+                <audio id="mountains" src="Auff2/72Mountains.mp3"></audio>
+             
+                <!-- 37 -->
+                <div class="image-box"><img src="Flashcards/IM73.png" alt="jacket"></div>
+                <div class="image-box"><img src="Flashcards/IM74.png" alt="boots"></div>
+                
+                <button class="sound-btn" onclick="playSound('jacket')">jacket</button>
+                <audio id="jacket" src="Auff2/73Jacket.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('boots')">boots</button>
+                <audio id="boots" src="Auff2/74Boots.mp3"></audio>
+
+                <!-- 38 -->
+                <div class="image-box"><img src="Flashcards/IM75.png" alt="backpack"></div>
+                <div class="image-box"><img src="Flashcards/IM76.png" alt="soup"></div>
+                             
+                <button class="sound-btn" onclick="playSound('backpack')">backpack</button>
+                <audio id="backpack" src="Auff2/75Backpack.mp3"></audio>
+
+                <button class="sound-btn" onclick="playSound('egg')">egg</button>
+                <audio id="egg" src="Auff2/76Egg.mp3"></audio>
+
+                <!-- 39 -->
+                <div class="image-box"><img src="Flashcards/IM77.png" alt="rice"></div>
+                <div class="image-box"><img src="Flashcards/IM78.png" alt="soup"></div>
+
+                <button class="sound-btn" onclick="playSound('rice')">rice</button>
+                <audio id="rice" src="Auff2/77Rice.mp3"></audio>
+                
+                <button class="sound-btn" onclick="playSound('soup')">soup</button>
+                <audio id="soup" src="Auff2/78Soup.mp3"></audio>
+
+                <!-- 40 -->
+                <div class="image-box"><img src="Flashcards/IM79.png" alt="meat"></div>
+                <div></div>
+                <button class="sound-btn" onclick="playSound('meat')">meat</button>
+                <audio id="meat" src="Auff2/79Meat.mp3"></audio>
+                
+            </div>
+            <div style="height:200px"></div>
+
+                <!-- UNIQUE AUDIO FUNCTION -->
+            <script>
+                function playSound(id) {
+                    const audio = document.getElementById(id);
+                    if (audio) audio.play();
+                }
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+                const serviceLink = document.querySelector('.services > a');
+                const serviceItem = document.querySelector('.services');
+                
+                hamburger.addEventListener('click', ()=>{
+                navLinks.classList.toggle('active');
+                hamburger.querySelector('span').textContent =
+                navLinks.classList.contains('active') ? 'close' : 'menu';
+                });
+                                
+                // dropdown "Từ vựng"
+                serviceLink.addEventListener('click',(e)=>{
+                  e.preventDefault();
+                  serviceItem.classList.toggle('open');
+                });
+                
+                // click ngoài thì đóng dropdown
+                document.addEventListener('click',(e)=>{
+                  if(!serviceItem.contains(e.target)){
+                    serviceItem.classList.remove('open');
+                  }
+                });
+            </script>
+    </body>        
+    </main>
+</body>
+<footer class="site-footer">
+  <div class="footer-item">
+    📱 <strong>Zalo:</strong> 0969 453 840 (Ms. Nhung)
+  </div>
+
+  <div class="footer-item">
+    📧 <strong>Email:</strong> thanhnhung846@gmail.com
+  </div>
+
+  <div class="footer-item">
+    📍 Ho Chi Minh City, Viet Nam
+  </div>
+</footer>
+</html>
