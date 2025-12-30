@@ -466,6 +466,24 @@
             
             renderGame();
 
+            hamburger.addEventListener('click', ()=>{
+            navLinks.classList.toggle('active');
+            hamburger.querySelector('span').textContent =
+            navLinks.classList.contains('active') ? 'close' : 'menu';
+            });
+                                
+            // dropdown "Từ vựng"
+            serviceLink.addEventListener('click',(e)=>{
+            e.preventDefault();
+            serviceItem.classList.toggle('open');
+            });
+                
+            // click ngoài thì đóng dropdown
+            document.addEventListener('click',(e)=>{
+            if(!serviceItem.contains(e.target)){
+            serviceItem.classList.remove('open');
+            }
+            });
         </script>
         
         <div style="height: 50px;"></div>
@@ -488,5 +506,6 @@
     </body>
 
 </html>
+
 
 
