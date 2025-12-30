@@ -479,7 +479,6 @@ padding:16px;
                 const totalEl = document.getElementById('total');
                 const scoreEl = document.getElementById('score');
                 const wordListEl = document.getElementById('wordList');
-                const langLabel = document.getElementById('langLabel');
 
                 // populate UI list
                 function renderWordList(){
@@ -511,8 +510,7 @@ padding:16px;
                 // play current item (use audioUrl if exists; otherwise TTS)
                 function playCurrent(){
                 const item = words[idx];
-                if(!item) return;
-                langLabel.textContent = 'Ngôn ngữ: ' + (item.lang || 'en-US');
+                if(!item) return;                
                 if(item.audioUrl){
                 const a = new Audio(item.audioUrl);
                 a.play();
@@ -555,8 +553,6 @@ padding:16px;
                 indexEl.textContent = idx + 1;
                 answerInput.value = '';
                 feedback.textContent = '';
-                // auto-play next
-                setTimeout(()=>playCurrent(), 200);
                 }
 
                 function showAnswer(){
@@ -628,7 +624,7 @@ padding:16px;
 
                 // If you want to preload audio files set audioUrl in words array and they will play instead of TTS.
 
-                <!-- UNIQUE AUDIO FUNCTION -->
+                // UNIQUE AUDIO FUNCTION
                 function playSound(id) {
                 const audio = document.getElementById(id);
                 if (audio) audio.play();
@@ -673,4 +669,5 @@ padding:16px;
     📍 Ho Chi Minh City, Viet Nam
   </div>
 </footer>
+
 </html>
