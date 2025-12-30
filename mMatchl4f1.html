@@ -273,10 +273,10 @@
                 margin:0 0 12px;
             }
 
-            /* ===== Matching 7 columns ===== */
+            /* ===== Matching 6 columns ===== */
             .matching-area{
                 display:grid;
-                grid-template-columns: repeat(7, 1fr);
+                grid-template-columns: repeat(8, 1fr);
                 gap:16px;
                 margin-top:16px;
             }
@@ -507,59 +507,44 @@
             opacity:0;
           }
         }
-        
         </style>
     </head>
     <body>
-        <!-- Phần đầu trang -->
-        <div style="
-            display: grid;
-            grid-template-columns: 310px 1fr;">
-            <div class="Logo">Ms.Nhung English</div>
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <li class="nav-link">
-                        <a href="index.html" target="_self">Trang chủ</a>
-                    </li>
+        <!-- HEADER -->
+        <div class="top-header">
+          <div class="Logo">MS.NHUNG ENGLISH</div>
 
-                    <li class="nav-link">
-                        <a href="#">Các khóa học</a>
-                    </li>
+          <nav class="navbar">
+            <button class="hamburger" aria-label="Mở menu">
+              <span class="material-icons">menu</span>
+            </button>
 
-                    <li class="nav-link services">
-                        <a href="#">Từ Vựng
-                            <span class="material-icons dropdown-icon">
-                                arrow_drop_down
-                            </span>
-                        </a>
-                        <ul class="drop-down">
-                            <li> <a href="mtuvungtienganhlop2.html" target="_self">Lớp 2</a></li>
-                            <li> <a href="mtuvungtienganhlop3.html" target="_self">Lớp 3</a></li>
-                            <li> <a href="mtuvungtienganhlop4.html" target="_self">Lớp 4</a></li>
-                            <li> <a href="mtuvungtienganhlop5.html" target="_self">Lớp 5</a></li>
-                        </ul>
-                    </li>
+            <ul class="nav-links">
+              <li class="nav-link"><a href="index.html" target="_self">Trang chủ</a></li>
+              <li class="nav-link"><a href="#">Khóa học</a></li>
 
-                    <li class="nav-link">
-                        <a href="#">Luyện Nghe</a>
-                    </li>
+              <li class="nav-link services">
+                <a href="#">
+                  Từ vựng
+                  <span class="material-icons">arrow_drop_down</span>
+                </a>
+                <ul class="drop-down">
+                  <li> <a href="mtuvungtienganhlop2.html" target="_self">Lớp 2</a></li>
+                  <li> <a href="mtuvungtienganhlop3.html" target="_self">Lớp 3</a></li>
+                  <li> <a href="mtuvungtienganhlop4.html" target="_self">Lớp 4</a></li>
+                  <li> <a href="mtuvungtienganhlop5.html" target="_self">Lớp 5</a></li>
+                </ul>
+              </li>
 
-                    <li class="nav-link">
-                        <a href="#">Luyện Đọc</a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">Ngữ Pháp</a>
-                    </li>
-
-                </ul>    
-            </nav>
+              <li class="nav-link"><a href="#">Luyện nghe</a></li>
+              <li class="nav-link"><a href="#">Ngữ pháp</a></li>
+            </ul>
+          </nav>
         </div>
+        <main>
         <!-- Phần đề mục -->
-        <div style="
-            display: grid;
-            grid-template-rows: 2fr 1fr;">  
-            <div class="TV4">TIẾNG ANH LỚP 4</div>
+        <div style="display: grid;grid-template-rows: 1fr 1fr;">  
+          <div class="TV4">TIẾNG ANH LỚP 3</div>
             <div class="dangbaitap">
                 <div class="box1"><a href="mtuvungtienganhlop4.html"target="_self">&#128210 Bộ từ vựng</a></div>
                 <div class="box2">&#129513 Ghép từ</div>
@@ -569,10 +554,11 @@
         </div>
         <!-- Phần chính -->
         <div style="height: 5px;"></div> 
-        <div style="
+        <div class="unit-scroll"> 
+          <div class="unit-grid" style="
             display:grid;
             grid-template-columns: repeat(14,1fr);
-            column-gap: 5px;">
+            column-gap: 5px; text-align: center;">
             <button class="unitbutton"><a href="mMatchl4u1.html" target="_self"><strong>UNIT 1</strong></a></button>
             <button class="unitbutton"><a href="mMatchl4u2.html" target="_self"><strong>UNIT 2</strong></a></button>
             <button class="unitbutton"><a href="mMatchl4u3.html" target="_self"><strong>UNIT 3</strong></a></button>
@@ -587,6 +573,7 @@
             <button class="unitbutton"><a href="mMatchl4u11.html" target="_self"><strong>UNIT 11</strong></a></button>
             <button class="unitbutton"><a href="mMatchl4u12.html" target="_self"><strong>UNIT 12</strong></a></button>
             <button class="unitbutton"><a href="mMatchl4f2.html" target="_self"><strong>Fluency 2</strong></a></button>
+          </div>
         </div>
         <div class="container">
             <h1>🧩 Nối hình với từ đúng</h1>
@@ -604,6 +591,7 @@
         <!-- Sounds -->
         <audio id="soundCorrect" src="correctsound.mp3" preload="auto"></audio>
         <audio id="soundWrong" src="error sound.mp3" preload="auto"></audio>
+        <audio id="soundFinish" src="finish.mp3" preload="auto"></audio>
 
         <script>
             /* ===== DATA ===== */
@@ -618,35 +606,64 @@
             { word: "light", image: "FlashcardsG4/77light.PNG" },
             { word: "heavy", image: "FlashcardsG4/78heavy.PNG" }
             ];
-
             const imageList = document.getElementById("imageList");
             const wordList = document.getElementById("wordList");
-
             const soundCorrect = document.getElementById("soundCorrect");
             const soundWrong = document.getElementById("soundWrong");
-
-            let draggedWord = null;
-
+            
+            let selectedWord = null;
+            
             /* ===== UTILS ===== */
             function shuffle(arr){
               return arr.sort(() => Math.random() - 0.5);
             }
-            
             function playSound(audio){
               audio.currentTime = 0;
               audio.play();
             }
+            const soundFinish = document.getElementById("soundFinish");
+
+            function showFinishFirework(){
+              const gameBox = document.querySelector(".container");
+              if(!gameBox) return;
             
+              const wrap = document.createElement("div");
+              wrap.className = "game-firework";
+            
+              for(let i=0;i<28;i++){
+                const p = document.createElement("span");
+                p.style.background = `hsl(${Math.random()*360},90%,60%)`;
+                p.style.left = "50%";
+                p.style.top = "60%";
+                p.style.setProperty("--x",(Math.random()*2-1)*220+"px");
+                p.style.setProperty("--y",(Math.random()*2-1)*220+"px");
+                wrap.appendChild(p);
+              }
+            
+              gameBox.appendChild(wrap);
+            
+              soundFinish.currentTime = 0;
+              soundFinish.play();
+            
+              setTimeout(()=>wrap.remove(),1700);
+            }
             /* ===== RENDER ===== */
             function renderGame(){
               imageList.innerHTML = "";
               wordList.innerHTML = "";
+              selectedWord = null;
             
               shuffle([...MATCH_DATA]).forEach(item=>{
                 const card = document.createElement("div");
                 card.className = "match-card";
                 card.dataset.answer = item.word;
-                card.innerHTML = `<img src="${item.image}">`;
+                card.innerHTML = `
+                  <img src="${item.image}">
+                  <span class="answer">${item.word}</span>
+                `;
+            
+                card.addEventListener("pointerup", ()=>checkMatch(card));
+            
                 imageList.appendChild(card);
               });
             
@@ -654,77 +671,67 @@
                 const word = document.createElement("div");
                 word.className = "word";
                 word.textContent = item.word;
-                word.draggable = true;
             
-                /* click / tap */
                 word.addEventListener("click", ()=>{
+                  if(word.classList.contains("matched")) return;
                   document.querySelectorAll(".word").forEach(w=>w.classList.remove("active"));
-                  draggedWord = word;
-                  word.classList.add("active");
-                });
-            
-                /* PC drag */
-                word.addEventListener("dragstart", ()=>{
-                  draggedWord = word;
-                  document.querySelectorAll(".word").forEach(w=>w.classList.remove("active"));
-                  word.classList.add("active","dragging");
-                });
-            
-                word.addEventListener("dragend", ()=>{
-                  word.classList.remove("dragging");
-                });
-            
-                /* Mobile */
-                word.addEventListener("pointerdown", ()=>{
-                  draggedWord = word;
-                  document.querySelectorAll(".word").forEach(w=>w.classList.remove("active"));
+                  selectedWord = word;
                   word.classList.add("active");
                 });
             
                 wordList.appendChild(word);
               });
-            
-              document.querySelectorAll(".match-card").forEach(card=>{
-                card.addEventListener("dragover", e=>e.preventDefault());
-                card.addEventListener("drop", ()=>checkMatch(card));
-                card.addEventListener("pointerup", ()=>checkMatch(card));
-              });
             }
-            
             /* ===== CHECK ===== */
             function checkMatch(card){
-              if(!draggedWord) return;
+              if(!selectedWord) return;
+              if(card.classList.contains("correct")) return;
             
-              const correct = card.dataset.answer === draggedWord.textContent;
+              const word = selectedWord;   // 🔒 lưu lại
+              selectedWord = null;         // 🔒 reset sớm tránh double fire
             
-              card.classList.remove("correct","wrong");
-              card.classList.add(correct ? "correct" : "wrong");
+              const correct = card.dataset.answer === word.textContent;
             
-              draggedWord.classList.remove("active","wrong");
+              card.classList.remove("wrong");
+              word.classList.remove("wrong","active");
             
               if(correct){
                 playSound(soundCorrect);
-                draggedWord.classList.add("matched");
-                draggedWord.draggable = false;
-                card.appendChild(draggedWord);
+                card.classList.add("correct");
+                word.classList.add("matched");
+                checkComplete(); // 🎆 hoàn thành thì bắn pháo hoa
               }else{
                 playSound(soundWrong);
-                draggedWord.classList.add("wrong");
+                card.classList.add("wrong");
+                word.classList.add("wrong");
+            
                 setTimeout(()=>{
-                  draggedWord.classList.remove("wrong","active");
+                  card.classList.remove("wrong");
+                  word.classList.remove("wrong");
                 },600);
               }
-            
-              draggedWord = null;
             }
-            
+            function checkComplete(){
+              const done = document.querySelectorAll(".word.matched").length;
+              if(done === MATCH_DATA.length){
+                setTimeout(showFinishFirework,300);
+              }
+            }
+            function clearFirework(){
+              document.querySelectorAll(".game-firework").forEach(fw => fw.remove());
+            }
             /* ===== RESET ===== */
             function resetGame(){
-              renderGame();
+              clearFirework();   // ❌ dọn pháo hoa ngay
+              renderGame();      // 🔁 chơi lại
             }
             
             renderGame();
-
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const serviceLink = document.querySelector('.services > a');
+            const serviceItem = document.querySelector('.services');
+                
             hamburger.addEventListener('click', ()=>{
             navLinks.classList.toggle('active');
             hamburger.querySelector('span').textContent =
@@ -744,30 +751,20 @@
             }
             });
         </script>
-        
-        <div style="height: 50px;"></div>
-        
-    <!-- Phần chân trang -->
-    <div style="
-    display:grid;
-    grid-template-columns: 300px 350px 500px 250px;
-    background-color: rgb(176, 185, 176);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-        <div>&#128241 Zalo: 0969 453 840 (Ms.Nhung)</div>
-        <div>&#128231 Email: thanhnhung846@gmail.com</div>
-        <div></div>
-        <div>Ho Chi Minh City, Viet Nam</div>
-    </div>        
-    
+    </main>    
     </body>
+    <footer class="site-footer">
+    <div class="footer-item">
+      📱 <strong>Zalo:</strong> 0969 453 840 (Ms. Nhung)
+    </div>
+
+    <div class="footer-item">
+      📧 <strong>Email:</strong> thanhnhung846@gmail.com
+    </div>
+
+    <div class="footer-item">
+      📍 Ho Chi Minh City, Viet Nam
+    </div>
+    </footer>
 
 </html>
-
-
-
-
-
-
