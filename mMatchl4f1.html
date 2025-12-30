@@ -20,6 +20,80 @@
                 width: 400px;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             }
+
+            /* ===== NAVBAR ===== */
+              .navbar{
+                display:flex;
+                align-items:center;
+              }
+    
+              /* HAMBURGER */
+              .hamburger{
+                display:none;
+                background:none;
+                border:none;
+                cursor:pointer;
+                padding:14px;
+              }
+              .hamburger span{
+                font-size:32px;
+                color:white;
+              }
+    
+              /* MENU */
+              .nav-links{
+                list-style:none;
+                display:flex;
+              }
+    
+              .nav-link{
+                position:relative;
+              }
+    
+              .nav-link a{
+                display:flex;
+                align-items:center;
+                gap:4px;
+                padding:14px 16px;
+                text-decoration:none;
+                color:white;
+                font-weight:600;
+              }
+    
+              /* DROPDOWN */
+              .drop-down{
+                display:none;
+                position:absolute;
+                top:100%;
+                left:0;
+                background:white;
+                list-style:none;
+                min-width:160px;
+                box-shadow:0 6px 16px rgba(0,0,0,0.2);
+                border-radius:8px;
+                overflow:hidden;
+                z-index:100;
+              }
+    
+              .drop-down li a{
+                display:block;
+                padding:10px 14px;
+                color:#1f2937;
+              }
+    
+              .drop-down li a:hover{
+                background:#f1f5f9;
+              }
+    
+              .services.open .drop-down{
+                display:block;
+              }
+                
+              .top-header{
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+              }
             
             .TV4{
                 color:rgb(41, 53, 28);
@@ -506,6 +580,7 @@
     </body>
 
 </html>
+
 
 
 
